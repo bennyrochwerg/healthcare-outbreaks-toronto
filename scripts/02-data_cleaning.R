@@ -64,4 +64,5 @@ outbreak_cleaned_data <-
                       "Unable to identify" ~ "Pending/Unknown"))
 
 #### Saving the Cleaned Dataset ####
+
 write_csv(outbreak_cleaned_data, "outputs/data/cleaned_data.csv")
