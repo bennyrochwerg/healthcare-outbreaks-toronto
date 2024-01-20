@@ -1,20 +1,1067 @@
-width,length,flying_time
-70,111,1.83
-57,127,2.32
-59,92,2.05
-70,75,1.1
-62,112,2.32
-68,103.5,0.5
-58,108,1.7
-79,114,0.86
-56,186,3.42
-87,68,1.37
-50,118,2.68
-49,186,1.83
-61,116,1.32
-60,127,1
-56,184,2.79
-69,124,1.4
-60,95,1.12
-44,137,1.28
-63,125,1.35
+ID,Type of Location,Type of Outbreak,Outbreak First Known Cause
+1,Long-Term Care Home,Respiratory,COVID-19
+2,Long-Term Care Home,Respiratory,COVID-19
+3,Long-Term Care Home,Respiratory,COVID-19
+4,Long-Term Care Home,Respiratory,Parainfluenza
+5,Hospital (Acute Care),Respiratory,COVID-19
+6,Retirement Home,Respiratory,COVID-19
+7,Retirement Home,Respiratory,Respiratory syncytial virus
+8,Long-Term Care Home,Respiratory,Respiratory syncytial virus
+9,Long-Term Care Home,Respiratory,Respiratory syncytial virus
+10,Long-Term Care Home,Respiratory,Respiratory syncytial virus
+11,Long-Term Care Home,Respiratory,Coronavirus*
+12,Long-Term Care Home,Respiratory,Metapneumovirus
+13,Retirement Home,Respiratory,COVID-19
+14,Long-Term Care Home,Respiratory,Influenza A (Not subtyped)
+15,Long-Term Care Home,Respiratory,Respiratory syncytial virus
+16,Long-Term Care Home,Respiratory,Influenza A (Not subtyped)
+17,Long-Term Care Home,Respiratory,COVID-19
+18,Hospital (Chronic Care),Respiratory,COVID-19
+19,Retirement Home,Respiratory,COVID-19
+20,Long-Term Care Home,Respiratory,COVID-19
+21,Long-Term Care Home,Respiratory,COVID-19
+22,Retirement Home,Enteric,Pending
+23,Long-Term Care Home,Respiratory,Coronavirus*
+24,Retirement Home,Respiratory,COVID-19
+25,Long-Term Care Home,Respiratory,COVID-19
+26,Retirement Home,Respiratory,COVID-19
+27,Hospital (Chronic Care),Respiratory,Influenza A (Not subtyped)
+28,Retirement Home,Respiratory,COVID-19
+29,Long-Term Care Home,Respiratory,COVID-19
+30,Hospital (Chronic Care),Respiratory,COVID-19
+31,Hospital (Chronic Care),Respiratory,COVID-19
+32,Long-Term Care Home,Respiratory,Metapneumovirus
+33,Hospital (Psychiatric),Respiratory,COVID-19
+34,Long-Term Care Home,Enteric,Unable to identify
+35,Long-Term Care Home,Respiratory,COVID-19
+36,Long-Term Care Home,Respiratory,COVID-19
+37,Retirement Home,Respiratory,COVID-19
+38,Long-Term Care Home,Respiratory,Influenza A (Not subtyped)
+39,Hospital (Chronic Care),Respiratory,COVID-19
+40,Long-Term Care Home,Respiratory,Unable to identify
+41,Retirement Home,Respiratory,COVID-19
+42,Long-Term Care Home,Enteric,Unable to identify
+43,Hospital (Chronic Care),Respiratory,COVID-19
+44,Retirement Home,Respiratory,COVID-19
+45,Hospital (Chronic Care),Respiratory,COVID-19
+46,Retirement Home,Respiratory,COVID-19
+47,Retirement Home,Respiratory,COVID-19
+48,Retirement Home,Respiratory,COVID-19
+49,Hospital (Chronic Care),Respiratory,Metapneumovirus
+50,Hospital (Chronic Care),Respiratory,COVID-19
+51,Hospital (Chronic Care),Enteric,Norovirus
+52,Long-Term Care Home,Respiratory,COVID-19
+53,Retirement Home,Respiratory,Influenza A (Not subtyped)
+54,Long-Term Care Home,Respiratory,COVID-19
+55,Long-Term Care Home,Respiratory,Respiratory syncytial virus
+56,Retirement Home,Respiratory,COVID-19
+57,Hospital (Chronic Care),Respiratory,COVID-19
+58,Hospital (Chronic Care),Respiratory,COVID-19
+59,Long-Term Care Home,Respiratory,Influenza A (Not subtyped)
+60,Long-Term Care Home,Respiratory,COVID-19
+61,Long-Term Care Home,Respiratory,Unable to identify
+62,Long-Term Care Home,Respiratory,COVID-19
+63,Hospital (Chronic Care),Respiratory,Influenza A (Not subtyped)
+64,Long-Term Care Home,Respiratory,COVID-19
+65,Hospital (Psychiatric),Respiratory,COVID-19
+66,Long-Term Care Home,Respiratory,COVID-19
+67,Retirement Home,Respiratory,COVID-19
+68,Hospital (Acute Care),Respiratory,COVID-19
+69,Retirement Home,Respiratory,COVID-19
+70,Hospital (Chronic Care),Respiratory,COVID-19
+71,Long-Term Care Home,Respiratory,COVID-19
+72,Long-Term Care Home,Respiratory,COVID-19
+73,Long-Term Care Home,Respiratory,COVID-19
+74,Long-Term Care Home,Respiratory,Influenza A (Not subtyped)
+75,Long-Term Care Home,Respiratory,COVID-19
+76,Hospital (Chronic Care),Respiratory,COVID-19
+77,Long-Term Care Home,Respiratory,Influenza A (Not subtyped)
+78,Long-Term Care Home,Respiratory,COVID-19
+79,Long-Term Care Home,Respiratory,COVID-19
+80,Long-Term Care Home,Respiratory,COVID-19
+81,Long-Term Care Home,Respiratory,COVID-19
+82,Long-Term Care Home,Respiratory,COVID-19
+83,Hospital (Acute Care),Respiratory,COVID-19
+84,Retirement Home,Respiratory,COVID-19
+85,Retirement Home,Respiratory,COVID-19
+86,Long-Term Care Home,Respiratory,COVID-19
+87,Retirement Home,Respiratory,COVID-19
+88,Hospital (Acute Care),Respiratory,COVID-19
+89,Long-Term Care Home,Respiratory,COVID-19
+90,Hospital (Chronic Care),Respiratory,COVID-19
+91,Hospital (Acute Care),Respiratory,COVID-19
+92,Retirement Home,Respiratory,COVID-19
+93,Long-Term Care Home,Respiratory,COVID-19
+94,Long-Term Care Home,Respiratory,COVID-19
+95,Retirement Home,Enteric,Unable to identify
+96,Hospital (Chronic Care),Respiratory,COVID-19
+97,Long-Term Care Home,Respiratory,COVID-19
+98,Retirement Home,Respiratory,COVID-19
+99,Long-Term Care Home,Respiratory,COVID-19
+100,Long-Term Care Home,Respiratory,COVID-19
+101,Long-Term Care Home,Respiratory,COVID-19
+102,Hospital (Acute Care),Respiratory,COVID-19
+103,Hospital (Acute Care),Respiratory,COVID-19
+104,Hospital (Acute Care),Respiratory,COVID-19
+105,Hospital (Chronic Care),Respiratory,COVID-19
+106,Long-Term Care Home,Respiratory,COVID-19
+107,Long-Term Care Home,Respiratory,Influenza A (Not subtyped)
+108,Hospital (Chronic Care),Respiratory,Influenza A (Not subtyped)
+109,Long-Term Care Home,Respiratory,COVID-19
+110,Hospital (Psychiatric),Respiratory,COVID-19
+111,Long-Term Care Home,Respiratory,Influenza A (Not subtyped)
+112,Long-Term Care Home,Respiratory,COVID-19
+113,Long-Term Care Home,Respiratory,COVID-19
+114,Long-Term Care Home,Respiratory,COVID-19
+115,Hospital (Acute Care),Respiratory,COVID-19
+116,Long-Term Care Home,Respiratory,COVID-19
+117,Long-Term Care Home,Respiratory,COVID-19
+118,Long-Term Care Home,Respiratory,COVID-19
+119,Long-Term Care Home,Respiratory,COVID-19
+120,Hospital (Acute Care),Respiratory,COVID-19
+121,Long-Term Care Home,Respiratory,COVID-19
+122,Hospital (Acute Care),Enteric,Unable to identify
+123,Long-Term Care Home,Respiratory,Influenza A (Not subtyped)
+124,Hospital (Chronic Care),Respiratory,COVID-19
+125,Long-Term Care Home,Respiratory,COVID-19
+126,Hospital (Chronic Care),Respiratory,COVID-19
+127,Hospital (Chronic Care),Respiratory,COVID-19
+128,Long-Term Care Home,Respiratory,Respiratory syncytial virus
+129,Long-Term Care Home,Respiratory,COVID-19
+130,Hospital (Acute Care),Respiratory,COVID-19
+131,Retirement Home,Respiratory,Influenza A (Not subtyped)
+132,Long-Term Care Home,Respiratory,COVID-19
+133,Long-Term Care Home,Respiratory,COVID-19
+134,Long-Term Care Home,Respiratory,COVID-19
+135,Long-Term Care Home,Respiratory,COVID-19
+136,Long-Term Care Home,Respiratory,COVID-19
+137,Hospital (Chronic Care),Respiratory,COVID-19
+138,Long-Term Care Home,Respiratory,Respiratory syncytial virus
+139,Long-Term Care Home,Respiratory,COVID-19
+140,Retirement Home,Respiratory,Respiratory syncytial virus
+141,Long-Term Care Home,Respiratory,COVID-19
+142,Hospital (Chronic Care),Respiratory,COVID-19
+143,Retirement Home,Respiratory,Influenza A (H3)
+144,Hospital (Chronic Care),Respiratory,COVID-19
+145,Hospital (Chronic Care),Respiratory,COVID-19
+146,Long-Term Care Home,Respiratory,COVID-19
+147,Long-Term Care Home,Respiratory,Influenza A (Not subtyped)
+148,Retirement Home,Respiratory,COVID-19
+149,Retirement Home,Respiratory,COVID-19
+150,Long-Term Care Home,Respiratory,COVID-19
+151,Retirement Home,Respiratory,COVID-19
+152,Hospital (Chronic Care),Respiratory,COVID-19
+153,Hospital (Acute Care),Respiratory,COVID-19
+154,Long-Term Care Home,Respiratory,Unable to identify
+155,Long-Term Care Home,Respiratory,COVID-19
+156,Long-Term Care Home,Respiratory,Pending
+157,Retirement Home,Respiratory,COVID-19
+158,Long-Term Care Home,Respiratory,COVID-19
+159,Retirement Home,Respiratory,COVID-19
+160,Long-Term Care Home,Respiratory,COVID-19
+161,Hospital (Chronic Care),Respiratory,COVID-19
+162,Hospital (Acute Care),Respiratory,COVID-19
+163,Long-Term Care Home,Respiratory,COVID-19
+164,Retirement Home,Respiratory,COVID-19
+165,Long-Term Care Home,Respiratory,COVID-19
+166,Hospital (Psychiatric),Respiratory,COVID-19
+167,Hospital (Acute Care),Respiratory,COVID-19
+168,Long-Term Care Home,Respiratory,Influenza A (H3)
+169,Retirement Home,Respiratory,COVID-19
+170,Hospital (Acute Care),Respiratory,COVID-19
+171,Hospital (Acute Care),Respiratory,COVID-19
+172,Retirement Home,Respiratory,Respiratory syncytial virus
+173,Long-Term Care Home,Respiratory,COVID-19
+174,Hospital (Chronic Care),Respiratory,COVID-19
+175,Long-Term Care Home,Respiratory,Rhinovirus
+176,Long-Term Care Home,Respiratory,COVID-19
+177,Hospital (Chronic Care),Respiratory,COVID-19
+178,Hospital (Chronic Care),Respiratory,COVID-19
+179,Hospital (Acute Care),Respiratory,COVID-19
+180,Retirement Home,Respiratory,COVID-19
+181,Retirement Home,Respiratory,COVID-19
+182,Hospital (Chronic Care),Respiratory,COVID-19
+183,Long-Term Care Home,Respiratory,Unable to identify
+184,Hospital (Chronic Care),Respiratory,COVID-19
+185,Hospital (Chronic Care),Respiratory,COVID-19
+186,Retirement Home,Respiratory,COVID-19
+187,Long-Term Care Home,Respiratory,COVID-19
+188,Hospital (Chronic Care),Respiratory,COVID-19
+189,Hospital (Acute Care),Respiratory,COVID-19
+190,Long-Term Care Home,Respiratory,Influenza A (Not subtyped)
+191,Long-Term Care Home,Respiratory,COVID-19
+192,Hospital (Chronic Care),Respiratory,COVID-19
+193,Hospital (Chronic Care),Respiratory,Influenza A (Not subtyped)
+194,Hospital (Chronic Care),Respiratory,COVID-19
+195,Long-Term Care Home,Respiratory,COVID-19
+196,Hospital (Chronic Care),Respiratory,COVID-19
+197,Hospital (Chronic Care),Respiratory,COVID-19
+198,Hospital (Chronic Care),Respiratory,COVID-19
+199,Long-Term Care Home,Respiratory,COVID-19
+200,Retirement Home,Respiratory,COVID-19
+201,Long-Term Care Home,Respiratory,COVID-19
+202,Long-Term Care Home,Respiratory,COVID-19
+203,Long-Term Care Home,Respiratory,Pending
+204,Long-Term Care Home,Respiratory,COVID-19
+205,Long-Term Care Home,Respiratory,Coronavirus*
+206,Long-Term Care Home,Respiratory,COVID-19
+207,Hospital (Chronic Care),Respiratory,COVID-19
+208,Hospital (Acute Care),Respiratory,COVID-19
+209,Long-Term Care Home,Respiratory,Unable to identify
+210,Retirement Home,Respiratory,COVID-19
+211,Long-Term Care Home,Respiratory,COVID-19
+212,Hospital (Acute Care),Respiratory,COVID-19
+213,Hospital (Chronic Care),Respiratory,COVID-19
+214,Long-Term Care Home,Respiratory,Respiratory syncytial virus
+215,Hospital (Acute Care),Respiratory,COVID-19
+216,Hospital (Chronic Care),Respiratory,COVID-19
+217,Retirement Home,Enteric,Unable to identify
+218,Long-Term Care Home,Respiratory,COVID-19
+219,Long-Term Care Home,Respiratory,COVID-19
+220,Hospital (Chronic Care),Respiratory,COVID-19
+221,Retirement Home,Respiratory,COVID-19
+222,Hospital (Chronic Care),Respiratory,COVID-19
+223,Long-Term Care Home,Respiratory,COVID-19
+224,Hospital (Psychiatric),Respiratory,COVID-19
+225,Long-Term Care Home,Respiratory,COVID-19
+226,Long-Term Care Home,Respiratory,COVID-19
+227,Long-Term Care Home,Respiratory,COVID-19
+228,Retirement Home,Respiratory,COVID-19
+229,Hospital (Chronic Care),Respiratory,Parainfluenza
+230,Hospital (Chronic Care),Respiratory,COVID-19
+231,Hospital (Acute Care),Respiratory,COVID-19
+232,Long-Term Care Home,Respiratory,COVID-19
+233,Retirement Home,Respiratory,COVID-19
+234,Long-Term Care Home,Respiratory,COVID-19
+235,Long-Term Care Home,Respiratory,COVID-19
+236,Long-Term Care Home,Respiratory,COVID-19
+237,Long-Term Care Home,Respiratory,COVID-19
+238,Hospital (Chronic Care),Respiratory,COVID-19
+239,Hospital (Chronic Care),Respiratory,COVID-19
+240,Hospital (Chronic Care),Respiratory,COVID-19
+241,Hospital (Chronic Care),Respiratory,COVID-19
+242,Retirement Home,Respiratory,COVID-19
+243,Hospital (Acute Care),Respiratory,COVID-19
+244,Long-Term Care Home,Respiratory,COVID-19
+245,Hospital (Acute Care),Respiratory,COVID-19
+246,Transitional Care,Respiratory,COVID-19
+247,Long-Term Care Home,Respiratory,COVID-19
+248,Long-Term Care Home,Respiratory,COVID-19
+249,Long-Term Care Home,Respiratory,COVID-19
+250,Hospital (Chronic Care),Respiratory,COVID-19
+251,Retirement Home,Respiratory,COVID-19
+252,Retirement Home,Respiratory,COVID-19
+253,Hospital (Psychiatric),Respiratory,COVID-19
+254,Long-Term Care Home,Respiratory,COVID-19
+255,Long-Term Care Home,Respiratory,Respiratory syncytial virus
+256,Long-Term Care Home,Respiratory,COVID-19
+257,Long-Term Care Home,Respiratory,COVID-19
+258,Hospital (Chronic Care),Respiratory,COVID-19
+259,Retirement Home,Respiratory,COVID-19
+260,Long-Term Care Home,Respiratory,Unable to identify
+261,Hospital (Chronic Care),Respiratory,COVID-19
+262,Hospital (Chronic Care),Respiratory,COVID-19
+263,Long-Term Care Home,Respiratory,COVID-19
+264,Long-Term Care Home,Respiratory,COVID-19
+265,Long-Term Care Home,Respiratory,COVID-19
+266,Long-Term Care Home,Respiratory,COVID-19
+267,Long-Term Care Home,Respiratory,Rhinovirus
+268,Long-Term Care Home,Respiratory,COVID-19
+269,Hospital (Chronic Care),Respiratory,COVID-19
+270,Long-Term Care Home,Respiratory,Unable to identify
+271,Long-Term Care Home,Respiratory,COVID-19
+272,Long-Term Care Home,Respiratory,COVID-19
+273,Hospital (Acute Care),Respiratory,COVID-19
+274,Hospital (Acute Care),Respiratory,COVID-19
+275,Long-Term Care Home,Respiratory,COVID-19
+276,Hospital (Chronic Care),Respiratory,COVID-19
+277,Hospital (Acute Care),Respiratory,COVID-19
+278,Retirement Home,Respiratory,COVID-19
+279,Long-Term Care Home,Respiratory,COVID-19
+280,Long-Term Care Home,Respiratory,COVID-19
+281,Long-Term Care Home,Respiratory,Influenza A (Not subtyped)
+282,Long-Term Care Home,Respiratory,COVID-19
+283,Long-Term Care Home,Respiratory,COVID-19
+284,Hospital (Chronic Care),Respiratory,COVID-19
+285,Long-Term Care Home,Respiratory,Parainfluenza
+286,Long-Term Care Home,Respiratory,COVID-19
+287,Hospital (Acute Care),Respiratory,COVID-19
+288,Hospital (Acute Care),Respiratory,COVID-19
+289,Long-Term Care Home,Respiratory,COVID-19
+290,Long-Term Care Home,Respiratory,Pending
+291,Long-Term Care Home,Respiratory,Unable to identify
+292,Long-Term Care Home,Respiratory,COVID-19
+293,Long-Term Care Home,Respiratory,COVID-19
+294,Hospital (Acute Care),Other,Group B Streptococcal disease (neonatal)
+295,Retirement Home,Respiratory,COVID-19
+296,Long-Term Care Home,Respiratory,COVID-19
+297,Long-Term Care Home,Respiratory,COVID-19
+298,Retirement Home,Respiratory,COVID-19
+299,Long-Term Care Home,Respiratory,COVID-19
+300,Long-Term Care Home,Respiratory,Unable to identify
+301,Long-Term Care Home,Respiratory,COVID-19
+302,Hospital (Chronic Care),Respiratory,COVID-19
+303,Long-Term Care Home,Respiratory,COVID-19
+304,Retirement Home,Respiratory,COVID-19
+305,Retirement Home,Respiratory,COVID-19
+306,Retirement Home,Respiratory,COVID-19
+307,Retirement Home,Respiratory,COVID-19
+308,Long-Term Care Home,Respiratory,COVID-19
+309,Long-Term Care Home,Respiratory,COVID-19
+310,Long-Term Care Home,Respiratory,COVID-19
+311,Long-Term Care Home,Respiratory,Influenza A (Not subtyped)
+312,Retirement Home,Respiratory,COVID-19
+313,Long-Term Care Home,Respiratory,COVID-19
+314,Long-Term Care Home,Respiratory,Parainfluenza
+315,Long-Term Care Home,Respiratory,COVID-19
+316,Retirement Home,Respiratory,COVID-19
+317,Long-Term Care Home,Respiratory,COVID-19
+318,Hospital (Acute Care),Respiratory,COVID-19
+319,Hospital (Chronic Care),Respiratory,COVID-19
+320,Long-Term Care Home,Respiratory,COVID-19
+321,Long-Term Care Home,Respiratory,Rhinovirus
+322,Long-Term Care Home,Respiratory,COVID-19
+323,Hospital (Acute Care),Respiratory,COVID-19
+324,Retirement Home,Respiratory,COVID-19
+325,Long-Term Care Home,Respiratory,COVID-19
+326,Hospital (Acute Care),Respiratory,COVID-19
+327,Hospital (Chronic Care),Respiratory,COVID-19
+328,Retirement Home,Respiratory,COVID-19
+329,Long-Term Care Home,Respiratory,COVID-19
+330,Retirement Home,Respiratory,COVID-19
+331,Retirement Home,Respiratory,COVID-19
+332,Retirement Home,Respiratory,COVID-19
+333,Long-Term Care Home,Respiratory,COVID-19
+334,Retirement Home,Respiratory,COVID-19
+335,Long-Term Care Home,Respiratory,COVID-19
+336,Hospital (Acute Care),Respiratory,COVID-19
+337,Long-Term Care Home,Respiratory,COVID-19
+338,Retirement Home,Respiratory,COVID-19
+339,Long-Term Care Home,Respiratory,COVID-19
+340,Long-Term Care Home,Respiratory,COVID-19
+341,Long-Term Care Home,Respiratory,COVID-19
+342,Long-Term Care Home,Respiratory,COVID-19
+343,Hospital (Acute Care),Respiratory,COVID-19
+344,Transitional Care,Respiratory,COVID-19
+345,Long-Term Care Home,Respiratory,Influenza A (H1N1)
+346,Long-Term Care Home,Respiratory,COVID-19
+347,Long-Term Care Home,Respiratory,COVID-19
+348,Long-Term Care Home,Respiratory,COVID-19
+349,Long-Term Care Home,Respiratory,COVID-19
+350,Hospital (Acute Care),Respiratory,COVID-19
+351,Long-Term Care Home,Respiratory,Respiratory syncytial virus
+352,Long-Term Care Home,Respiratory,COVID-19
+353,Retirement Home,Respiratory,COVID-19
+354,Long-Term Care Home,Respiratory,Respiratory syncytial virus
+355,Long-Term Care Home,Respiratory,COVID-19
+356,Long-Term Care Home,Respiratory,COVID-19
+357,Hospital (Chronic Care),Respiratory,COVID-19
+358,Long-Term Care Home,Respiratory,COVID-19
+359,Retirement Home,Respiratory,COVID-19
+360,Long-Term Care Home,Respiratory,COVID-19
+361,Hospital (Chronic Care),Respiratory,COVID-19
+362,Long-Term Care Home,Respiratory,Rhinovirus
+363,Retirement Home,Respiratory,COVID-19
+364,Retirement Home,Respiratory,COVID-19
+365,Long-Term Care Home,Respiratory,COVID-19
+366,Retirement Home,Respiratory,COVID-19
+367,Retirement Home,Respiratory,Rhinovirus
+368,Retirement Home,Enteric,Unable to identify
+369,Long-Term Care Home,Respiratory,COVID-19
+370,Long-Term Care Home,Respiratory,Rhinovirus
+371,Long-Term Care Home,Respiratory,COVID-19
+372,Hospital (Acute Care),Respiratory,COVID-19
+373,Hospital (Chronic Care),Respiratory,COVID-19
+374,Long-Term Care Home,Respiratory,COVID-19
+375,Retirement Home,Respiratory,COVID-19
+376,Long-Term Care Home,Respiratory,COVID-19
+377,Hospital (Chronic Care),Respiratory,COVID-19
+378,Long-Term Care Home,Respiratory,COVID-19
+379,Long-Term Care Home,Respiratory,Rhinovirus
+380,Hospital (Chronic Care),Respiratory,COVID-19
+381,Hospital (Chronic Care),Respiratory,COVID-19
+382,Long-Term Care Home,Respiratory,COVID-19
+383,Long-Term Care Home,Respiratory,COVID-19
+384,Long-Term Care Home,Respiratory,Rhinovirus
+385,Long-Term Care Home,Respiratory,COVID-19
+386,Long-Term Care Home,Respiratory,COVID-19
+387,Hospital (Chronic Care),Respiratory,COVID-19
+388,Hospital (Chronic Care),Respiratory,COVID-19
+389,Hospital (Acute Care),Respiratory,COVID-19
+390,Long-Term Care Home,Respiratory,Rhinovirus
+391,Retirement Home,Respiratory,COVID-19
+392,Long-Term Care Home,Respiratory,COVID-19
+393,Long-Term Care Home,Respiratory,COVID-19
+394,Long-Term Care Home,Respiratory,Rhinovirus
+395,Long-Term Care Home,Respiratory,COVID-19
+396,Retirement Home,Respiratory,Rhinovirus
+397,Long-Term Care Home,Respiratory,COVID-19
+398,Long-Term Care Home,Respiratory,COVID-19
+399,Long-Term Care Home,Respiratory,Enterovirus/Rhinovirus
+400,Long-Term Care Home,Respiratory,COVID-19
+401,Hospital (Acute Care),Respiratory,COVID-19
+402,Hospital (Acute Care),Respiratory,COVID-19
+403,Long-Term Care Home,Enteric,Norovirus
+404,Retirement Home,Respiratory,COVID-19
+405,Long-Term Care Home,Respiratory,Parainfluenza
+406,Long-Term Care Home,Respiratory,Rhinovirus
+407,Long-Term Care Home,Respiratory,COVID-19
+408,Hospital (Chronic Care),Respiratory,COVID-19
+409,Hospital (Psychiatric),Respiratory,Unable to identify
+410,Retirement Home,Respiratory,COVID-19
+411,Long-Term Care Home,Respiratory,COVID-19
+412,Long-Term Care Home,Respiratory,Unable to identify
+413,Long-Term Care Home,Respiratory,COVID-19
+414,Hospital (Chronic Care),Respiratory,COVID-19
+415,Transitional Care,Respiratory,COVID-19
+416,Long-Term Care Home,Respiratory,Unable to identify
+417,Long-Term Care Home,Respiratory,Rhinovirus
+418,Long-Term Care Home,Respiratory,COVID-19
+419,Long-Term Care Home,Respiratory,Rhinovirus
+420,Retirement Home,Respiratory,COVID-19
+421,Long-Term Care Home,Respiratory,COVID-19
+422,Long-Term Care Home,Respiratory,COVID-19
+423,Long-Term Care Home,Respiratory,COVID-19
+424,Retirement Home,Respiratory,COVID-19
+425,Retirement Home,Respiratory,Rhinovirus
+426,Retirement Home,Respiratory,COVID-19
+427,Hospital (Chronic Care),Respiratory,COVID-19
+428,Transitional Care,Respiratory,COVID-19
+429,Long-Term Care Home,Respiratory,COVID-19
+430,Long-Term Care Home,Respiratory,COVID-19
+431,Hospital (Acute Care),Respiratory,COVID-19
+432,Hospital (Acute Care),Respiratory,COVID-19
+433,Long-Term Care Home,Respiratory,COVID-19
+434,Long-Term Care Home,Respiratory,COVID-19
+435,Long-Term Care Home,Respiratory,Rhinovirus
+436,Long-Term Care Home,Respiratory,COVID-19
+437,Long-Term Care Home,Respiratory,COVID-19
+438,Long-Term Care Home,Respiratory,Parainfluenza
+439,Long-Term Care Home,Respiratory,COVID-19
+440,Hospital (Chronic Care),Respiratory,COVID-19
+441,Hospital (Chronic Care),Respiratory,COVID-19
+442,Long-Term Care Home,Respiratory,Unable to identify
+443,Retirement Home,Respiratory,COVID-19
+444,Hospital (Chronic Care),Respiratory,COVID-19
+445,Hospital (Chronic Care),Respiratory,Enterovirus/Rhinovirus
+446,Retirement Home,Respiratory,COVID-19
+447,Long-Term Care Home,Respiratory,Parainfluenza
+448,Long-Term Care Home,Respiratory,COVID-19
+449,Hospital (Chronic Care),Respiratory,COVID-19
+450,Retirement Home,Respiratory,COVID-19
+451,Hospital (Chronic Care),Respiratory,COVID-19
+452,Long-Term Care Home,Respiratory,COVID-19
+453,Long-Term Care Home,Respiratory,Enterovirus/Rhinovirus
+454,Long-Term Care Home,Respiratory,COVID-19
+455,Long-Term Care Home,Respiratory,Rhinovirus
+456,Retirement Home,Respiratory,COVID-19
+457,Long-Term Care Home,Respiratory,COVID-19
+458,Retirement Home,Respiratory,Unable to identify
+459,Hospital (Acute Care),Respiratory,COVID-19
+460,Long-Term Care Home,Respiratory,COVID-19
+461,Retirement Home,Respiratory,COVID-19
+462,Retirement Home,Respiratory,Unable to identify
+463,Retirement Home,Respiratory,Rhinovirus
+464,Hospital (Acute Care),Respiratory,COVID-19
+465,Hospital (Chronic Care),Respiratory,Enterovirus/Rhinovirus
+466,Long-Term Care Home,Respiratory,COVID-19
+467,Retirement Home,Respiratory,COVID-19
+468,Long-Term Care Home,Respiratory,Unable to identify
+469,Long-Term Care Home,Respiratory,Coronavirus*
+470,Hospital (Acute Care),Respiratory,COVID-19
+471,Long-Term Care Home,Respiratory,COVID-19
+472,Long-Term Care Home,Respiratory,COVID-19
+473,Long-Term Care Home,Respiratory,COVID-19
+474,Long-Term Care Home,Respiratory,Rhinovirus
+475,Long-Term Care Home,Respiratory,Rhinovirus
+476,Long-Term Care Home,Respiratory,Rhinovirus
+477,Long-Term Care Home,Respiratory,Rhinovirus
+478,Long-Term Care Home,Respiratory,COVID-19
+479,Transitional Care,Respiratory,COVID-19
+480,Long-Term Care Home,Respiratory,COVID-19
+481,Long-Term Care Home,Respiratory,COVID-19
+482,Long-Term Care Home,Respiratory,COVID-19
+483,Hospital (Acute Care),Respiratory,COVID-19
+484,Long-Term Care Home,Respiratory,COVID-19
+485,Long-Term Care Home,Respiratory,COVID-19
+486,Retirement Home,Respiratory,COVID-19
+487,Long-Term Care Home,Respiratory,Rhinovirus
+488,Long-Term Care Home,Respiratory,COVID-19
+489,Retirement Home,Respiratory,COVID-19
+490,Long-Term Care Home,Respiratory,COVID-19
+491,Long-Term Care Home,Respiratory,Rhinovirus
+492,Long-Term Care Home,Respiratory,Rhinovirus
+493,Long-Term Care Home,Respiratory,Rhinovirus
+494,Long-Term Care Home,Respiratory,Rhinovirus
+495,Long-Term Care Home,Respiratory,Rhinovirus
+496,Long-Term Care Home,Respiratory,COVID-19
+497,Hospital (Psychiatric),Respiratory,COVID-19
+498,Long-Term Care Home,Respiratory,Rhinovirus
+499,Long-Term Care Home,Respiratory,Rhinovirus
+500,Long-Term Care Home,Respiratory,Rhinovirus
+501,Retirement Home,Respiratory,COVID-19
+502,Long-Term Care Home,Respiratory,Enterovirus/Rhinovirus
+503,Long-Term Care Home,Respiratory,COVID-19
+504,Hospital (Psychiatric),Respiratory,Unable to identify
+505,Retirement Home,Respiratory,COVID-19
+506,Hospital (Chronic Care),Respiratory,COVID-19
+507,Long-Term Care Home,Respiratory,Unable to identify
+508,Long-Term Care Home,Respiratory,Rhinovirus
+509,Long-Term Care Home,Respiratory,COVID-19
+510,Long-Term Care Home,Respiratory,Rhinovirus
+511,Hospital (Acute Care),Respiratory,COVID-19
+512,Long-Term Care Home,Respiratory,COVID-19
+513,Long-Term Care Home,Respiratory,COVID-19
+514,Long-Term Care Home,Respiratory,COVID-19
+515,Long-Term Care Home,Respiratory,Rhinovirus
+516,Long-Term Care Home,Respiratory,COVID-19
+517,Retirement Home,Respiratory,Rhinovirus
+518,Long-Term Care Home,Respiratory,Rhinovirus
+519,Long-Term Care Home,Respiratory,COVID-19
+520,Retirement Home,Respiratory,COVID-19
+521,Hospital (Acute Care),Respiratory,COVID-19
+522,Retirement Home,Respiratory,Rhinovirus
+523,Retirement Home,Respiratory,COVID-19
+524,Long-Term Care Home,Respiratory,Rhinovirus
+525,Long-Term Care Home,Respiratory,COVID-19
+526,Long-Term Care Home,Respiratory,Unable to identify
+527,Long-Term Care Home,Respiratory,COVID-19
+528,Long-Term Care Home,Respiratory,Rhinovirus
+529,Long-Term Care Home,Respiratory,COVID-19
+530,Long-Term Care Home,Respiratory,Rhinovirus
+531,Transitional Care,Respiratory,COVID-19
+532,Long-Term Care Home,Respiratory,Rhinovirus
+533,Long-Term Care Home,Respiratory,Rhinovirus
+534,Long-Term Care Home,Respiratory,COVID-19
+535,Long-Term Care Home,Respiratory,Unable to identify
+536,Hospital (Psychiatric),Enteric,Unable to identify
+537,Long-Term Care Home,Respiratory,COVID-19
+538,Retirement Home,Respiratory,COVID-19
+539,Long-Term Care Home,Respiratory,COVID-19
+540,Retirement Home,Respiratory,COVID-19
+541,Hospital (Acute Care),Respiratory,COVID-19
+542,Long-Term Care Home,Respiratory,Rhinovirus
+543,Long-Term Care Home,Respiratory,COVID-19
+544,Long-Term Care Home,Respiratory,Rhinovirus
+545,Long-Term Care Home,Respiratory,Parainfluenza
+546,Long-Term Care Home,Respiratory,Parainfluenza
+547,Long-Term Care Home,Respiratory,COVID-19
+548,Long-Term Care Home,Respiratory,Rhinovirus
+549,Long-Term Care Home,Respiratory,Enterovirus/Rhinovirus
+550,Long-Term Care Home,Respiratory,Rhinovirus
+551,Long-Term Care Home,Respiratory,Coronavirus*
+552,Long-Term Care Home,Respiratory,COVID-19
+553,Long-Term Care Home,Respiratory,Rhinovirus
+554,Long-Term Care Home,Respiratory,Unable to identify
+555,Long-Term Care Home,Respiratory,Rhinovirus
+556,Long-Term Care Home,Respiratory,COVID-19
+557,Long-Term Care Home,Respiratory,COVID-19
+558,Hospital (Psychiatric),Respiratory,Unable to identify
+559,Hospital (Psychiatric),Enteric,Unable to identify
+560,Long-Term Care Home,Respiratory,Rhinovirus
+561,Retirement Home,Respiratory,COVID-19
+562,Long-Term Care Home,Respiratory,COVID-19
+563,Retirement Home,Respiratory,COVID-19
+564,Long-Term Care Home,Respiratory,Unable to identify
+565,Long-Term Care Home,Respiratory,COVID-19
+566,Long-Term Care Home,Respiratory,Metapneumovirus
+567,Retirement Home,Respiratory,Unable to identify
+568,Long-Term Care Home,Respiratory,Rhinovirus
+569,Retirement Home,Respiratory,COVID-19
+570,Retirement Home,Respiratory,Rhinovirus
+571,Long-Term Care Home,Respiratory,Rhinovirus
+572,Retirement Home,Respiratory,Unable to identify
+573,Long-Term Care Home,Respiratory,Respiratory syncytial virus
+574,Long-Term Care Home,Enteric,Norovirus
+575,Hospital (Acute Care),Respiratory,COVID-19
+576,Long-Term Care Home,Respiratory,Rhinovirus
+577,Long-Term Care Home,Respiratory,Rhinovirus
+578,Long-Term Care Home,Respiratory,COVID-19
+579,Long-Term Care Home,Respiratory,Unable to identify
+580,Long-Term Care Home,Respiratory,Rhinovirus
+581,Long-Term Care Home,Respiratory,Rhinovirus
+582,Long-Term Care Home,Respiratory,Parainfluenza
+583,Long-Term Care Home,Respiratory,Rhinovirus
+584,Long-Term Care Home,Respiratory,Rhinovirus
+585,Long-Term Care Home,Respiratory,COVID-19
+586,Retirement Home,Respiratory,Rhinovirus
+587,Long-Term Care Home,Respiratory,COVID-19
+588,Hospital (Chronic Care),Respiratory,COVID-19
+589,Long-Term Care Home,Respiratory,Rhinovirus
+590,Long-Term Care Home,Respiratory,Enterovirus
+591,Long-Term Care Home,Respiratory,Rhinovirus
+592,Retirement Home,Respiratory,COVID-19
+593,Long-Term Care Home,Respiratory,Rhinovirus
+594,Long-Term Care Home,Respiratory,COVID-19
+595,Long-Term Care Home,Respiratory,Enterovirus/Rhinovirus
+596,Long-Term Care Home,Respiratory,Metapneumovirus
+597,Long-Term Care Home,Respiratory,COVID-19
+598,Long-Term Care Home,Respiratory,Rhinovirus
+599,Retirement Home,Respiratory,COVID-19
+600,Long-Term Care Home,Enteric,Unable to identify
+601,Long-Term Care Home,Respiratory,COVID-19
+602,Hospital (Acute Care),Respiratory,COVID-19
+603,Hospital (Acute Care),Respiratory,COVID-19
+604,Hospital (Acute Care),Respiratory,Parainfluenza PIV III
+605,Long-Term Care Home,Respiratory,Parainfluenza
+606,Long-Term Care Home,Enteric,Unable to identify
+607,Retirement Home,Respiratory,Influenza A (Not subtyped)
+608,Long-Term Care Home,Respiratory,COVID-19
+609,Long-Term Care Home,Respiratory,COVID-19
+610,Long-Term Care Home,Respiratory,COVID-19
+611,Long-Term Care Home,Respiratory,COVID-19
+612,Long-Term Care Home,Respiratory,Rhinovirus
+613,Long-Term Care Home,Respiratory,COVID-19
+614,Long-Term Care Home,Respiratory,Parainfluenza
+615,Long-Term Care Home,Respiratory,Parainfluenza
+616,Long-Term Care Home,Respiratory,Metapneumovirus
+617,Long-Term Care Home,Respiratory,Rhinovirus
+618,Long-Term Care Home,Enteric,Unable to identify
+619,Long-Term Care Home,Respiratory,Enterovirus/Rhinovirus
+620,Long-Term Care Home,Respiratory,COVID-19
+621,Retirement Home,Respiratory,COVID-19
+622,Long-Term Care Home,Respiratory,COVID-19
+623,Long-Term Care Home,Respiratory,Coronavirus*
+624,Hospital (Acute Care),Respiratory,COVID-19
+625,Retirement Home,Respiratory,Unable to identify
+626,Long-Term Care Home,Respiratory,Metapneumovirus
+627,Hospital (Chronic Care),Respiratory,COVID-19
+628,Long-Term Care Home,Respiratory,COVID-19
+629,Long-Term Care Home,Respiratory,Parainfluenza
+630,Hospital (Chronic Care),Respiratory,COVID-19
+631,Long-Term Care Home,Respiratory,Enterovirus
+632,Retirement Home,Respiratory,COVID-19
+633,Long-Term Care Home,Respiratory,COVID-19
+634,Long-Term Care Home,Respiratory,Parainfluenza
+635,Long-Term Care Home,Respiratory,Coronavirus*
+636,Long-Term Care Home,Enteric,Unable to identify
+637,Hospital (Chronic Care),Respiratory,COVID-19
+638,Long-Term Care Home,Respiratory,COVID-19
+639,Long-Term Care Home,Respiratory,COVID-19
+640,Long-Term Care Home,Respiratory,COVID-19
+641,Retirement Home,Respiratory,Rhinovirus
+642,Retirement Home,Respiratory,COVID-19
+643,Retirement Home,Respiratory,COVID-19
+644,Long-Term Care Home,Respiratory,COVID-19
+645,Long-Term Care Home,Respiratory,COVID-19
+646,Long-Term Care Home,Respiratory,COVID-19
+647,Retirement Home,Respiratory,COVID-19
+648,Retirement Home,Respiratory,COVID-19
+649,Long-Term Care Home,Respiratory,Influenza A (H1N1)
+650,Long-Term Care Home,Respiratory,COVID-19
+651,Long-Term Care Home,Enteric,Unable to identify
+652,Long-Term Care Home,Respiratory,COVID-19
+653,Retirement Home,Respiratory,Rhinovirus
+654,Long-Term Care Home,Respiratory,COVID-19
+655,Retirement Home,Respiratory,COVID-19
+656,Long-Term Care Home,Respiratory,COVID-19
+657,Long-Term Care Home,Respiratory,COVID-19
+658,Long-Term Care Home,Respiratory,COVID-19
+659,Long-Term Care Home,Respiratory,COVID-19
+660,Long-Term Care Home,Respiratory,Coronavirus*
+661,Long-Term Care Home,Respiratory,COVID-19
+662,Hospital (Acute Care),Respiratory,Parainfluenza PIV III
+663,Long-Term Care Home,Respiratory,COVID-19
+664,Hospital (Acute Care),Respiratory,COVID-19
+665,Transitional Care,Respiratory,COVID-19
+666,Long-Term Care Home,Respiratory,COVID-19
+667,Hospital (Chronic Care),Respiratory,COVID-19
+668,Hospital (Acute Care),Respiratory,COVID-19
+669,Long-Term Care Home,Respiratory,COVID-19
+670,Hospital (Acute Care),Respiratory,COVID-19
+671,Retirement Home,Respiratory,Unable to identify
+672,Long-Term Care Home,Respiratory,COVID-19
+673,Long-Term Care Home,Respiratory,Coronavirus*
+674,Hospital (Chronic Care),Respiratory,COVID-19
+675,Long-Term Care Home,Respiratory,COVID-19
+676,Retirement Home,Enteric,Norovirus
+677,Long-Term Care Home,Respiratory,COVID-19
+678,Hospital (Psychiatric),Respiratory,COVID-19
+679,Long-Term Care Home,Respiratory,Respiratory syncytial virus
+680,Long-Term Care Home,Respiratory,Metapneumovirus
+681,Hospital (Acute Care),Respiratory,COVID-19
+682,Retirement Home,Respiratory,COVID-19
+683,Long-Term Care Home,Respiratory,COVID-19
+684,Long-Term Care Home,Respiratory,Respiratory syncytial virus
+685,Hospital (Psychiatric),Respiratory,COVID-19
+686,Long-Term Care Home,Respiratory,COVID-19
+687,Retirement Home,Respiratory,COVID-19
+688,Long-Term Care Home,Respiratory,COVID-19
+689,Long-Term Care Home,Respiratory,COVID-19
+690,Long-Term Care Home,Respiratory,Coronavirus*
+691,Long-Term Care Home,Respiratory,COVID-19
+692,Long-Term Care Home,Respiratory,COVID-19
+693,Hospital (Chronic Care),Respiratory,Metapneumovirus
+694,Hospital (Acute Care),Respiratory,COVID-19
+695,Long-Term Care Home,Respiratory,Coronavirus*
+696,Long-Term Care Home,Respiratory,COVID-19
+697,Long-Term Care Home,Respiratory,COVID-19
+698,Retirement Home,Respiratory,COVID-19
+699,Retirement Home,Respiratory,COVID-19
+700,Hospital (Chronic Care),Respiratory,Parainfluenza PIV III
+701,Hospital (Psychiatric),Respiratory,COVID-19
+702,Long-Term Care Home,Respiratory,Respiratory syncytial virus
+703,Long-Term Care Home,Respiratory,COVID-19
+704,Hospital (Acute Care),Respiratory,Respiratory syncytial virus
+705,Retirement Home,Respiratory,Coronavirus*
+706,Long-Term Care Home,Respiratory,COVID-19
+707,Long-Term Care Home,Respiratory,Metapneumovirus
+708,Long-Term Care Home,Respiratory,COVID-19
+709,Long-Term Care Home,Respiratory,COVID-19
+710,Long-Term Care Home,Respiratory,Metapneumovirus
+711,Long-Term Care Home,Respiratory,COVID-19
+712,Long-Term Care Home,Respiratory,Respiratory syncytial virus
+713,Long-Term Care Home,Respiratory,Respiratory syncytial virus
+714,Retirement Home,Respiratory,Coronavirus*
+715,Long-Term Care Home,Respiratory,COVID-19
+716,Long-Term Care Home,Respiratory,Metapneumovirus
+717,Hospital (Acute Care),Enteric,Unable to identify
+718,Long-Term Care Home,Respiratory,Rhinovirus
+719,Hospital (Chronic Care),Respiratory,COVID-19
+720,Hospital (Psychiatric),Respiratory,Streptococcus pyogenes
+721,Long-Term Care Home,Respiratory,COVID-19
+722,Retirement Home,Respiratory,COVID-19
+723,Hospital (Chronic Care),Enteric,Norovirus
+724,Long-Term Care Home,Respiratory,Rhinovirus
+725,Hospital (Acute Care),Respiratory,COVID-19
+726,Hospital (Acute Care),Respiratory,Coronavirus*
+727,Retirement Home,Respiratory,COVID-19
+728,Retirement Home,Respiratory,COVID-19
+729,Long-Term Care Home,Respiratory,COVID-19
+730,Long-Term Care Home,Enteric,Unable to identify
+731,Long-Term Care Home,Respiratory,Parainfluenza
+732,Long-Term Care Home,Respiratory,COVID-19
+733,Long-Term Care Home,Respiratory,Metapneumovirus
+734,Long-Term Care Home,Respiratory,Coronavirus*
+735,Long-Term Care Home,Respiratory,Metapneumovirus
+736,Long-Term Care Home,Respiratory,COVID-19
+737,Long-Term Care Home,Respiratory,Enterovirus
+738,Long-Term Care Home,Respiratory,COVID-19
+739,Hospital (Chronic Care),Respiratory,COVID-19
+740,Long-Term Care Home,Respiratory,Rhinovirus
+741,Long-Term Care Home,Respiratory,COVID-19
+742,Long-Term Care Home,Respiratory,Enterovirus/Rhinovirus
+743,Hospital (Chronic Care),Respiratory,COVID-19
+744,Retirement Home,Respiratory,COVID-19
+745,Retirement Home,Respiratory,COVID-19
+746,Long-Term Care Home,Respiratory,Metapneumovirus
+747,Long-Term Care Home,Respiratory,COVID-19
+748,Hospital (Acute Care),Enteric,Norovirus
+749,Hospital (Acute Care),Respiratory,COVID-19
+750,Hospital (Acute Care),Respiratory,COVID-19
+751,Hospital (Acute Care),Respiratory,COVID-19
+752,Long-Term Care Home,Respiratory,COVID-19
+753,Transitional Care,Respiratory,COVID-19
+754,Hospital (Chronic Care),Respiratory,COVID-19
+755,Retirement Home,Respiratory,COVID-19
+756,Hospital (Acute Care),Respiratory,Parainfluenza PIV III
+757,Long-Term Care Home,Respiratory,COVID-19
+758,Retirement Home,Respiratory,COVID-19
+759,Transitional Care,Respiratory,COVID-19
+760,Long-Term Care Home,Respiratory,Unable to identify
+761,Transitional Care,Respiratory,COVID-19
+762,Retirement Home,Respiratory,COVID-19
+763,Long-Term Care Home,Respiratory,Enterovirus/Rhinovirus
+764,Long-Term Care Home,Respiratory,COVID-19
+765,Long-Term Care Home,Enteric,Unable to identify
+766,Hospital (Chronic Care),Enteric,Norovirus
+767,Long-Term Care Home,Respiratory,COVID-19
+768,Hospital (Acute Care),Respiratory,COVID-19
+769,Long-Term Care Home,Respiratory,Respiratory syncytial virus
+770,Long-Term Care Home,Respiratory,Respiratory syncytial virus
+771,Hospital (Acute Care),Respiratory,COVID-19
+772,Long-Term Care Home,Respiratory,Metapneumovirus
+773,Long-Term Care Home,Respiratory,Enterovirus/Rhinovirus
+774,Retirement Home,Respiratory,COVID-19
+775,Hospital (Chronic Care),Respiratory,COVID-19
+776,Hospital (Acute Care),Respiratory,Parainfluenza PIV III
+777,Hospital (Chronic Care),Respiratory,COVID-19
+778,Retirement Home,Respiratory,COVID-19
+779,Long-Term Care Home,Respiratory,COVID-19
+780,Retirement Home,Respiratory,COVID-19
+781,Long-Term Care Home,Respiratory,Respiratory syncytial virus
+782,Retirement Home,Respiratory,COVID-19
+783,Hospital (Chronic Care),Respiratory,COVID-19
+784,Long-Term Care Home,Respiratory,COVID-19
+785,Long-Term Care Home,Respiratory,COVID-19
+786,Long-Term Care Home,Respiratory,COVID-19
+787,Hospital (Acute Care),Other,CPE Enterobacter unspecified (NDM)
+788,Retirement Home,Respiratory,Coronavirus*
+789,Retirement Home,Respiratory,Metapneumovirus
+790,Hospital (Chronic Care),Respiratory,COVID-19
+791,Long-Term Care Home,Respiratory,COVID-19
+792,Long-Term Care Home,Respiratory,COVID-19
+793,Long-Term Care Home,Respiratory,Influenza A (Not subtyped)
+794,Long-Term Care Home,Respiratory,Metapneumovirus
+795,Long-Term Care Home,Respiratory,COVID-19
+796,Long-Term Care Home,Respiratory,Parainfluenza
+797,Long-Term Care Home,Respiratory,COVID-19
+798,Retirement Home,Enteric,Norovirus
+799,Hospital (Chronic Care),Respiratory,COVID-19
+800,Long-Term Care Home,Respiratory,COVID-19
+801,Long-Term Care Home,Respiratory,Metapneumovirus
+802,Hospital (Chronic Care),Respiratory,COVID-19
+803,Long-Term Care Home,Respiratory,COVID-19
+804,Retirement Home,Respiratory,COVID-19
+805,Long-Term Care Home,Respiratory,COVID-19
+806,Long-Term Care Home,Respiratory,Coronavirus*
+807,Long-Term Care Home,Enteric,Unable to identify
+808,Retirement Home,Respiratory,Parainfluenza
+809,Long-Term Care Home,Respiratory,COVID-19
+810,Hospital (Acute Care),Respiratory,Metapneumovirus
+811,Hospital (Acute Care),Respiratory,COVID-19
+812,Long-Term Care Home,Respiratory,Coronavirus*
+813,Long-Term Care Home,Respiratory,Respiratory syncytial virus
+814,Retirement Home,Respiratory,Unable to identify
+815,Retirement Home,Enteric,Unable to identify
+816,Long-Term Care Home,Respiratory,Metapneumovirus
+817,Hospital (Acute Care),Enteric,Norovirus
+818,Long-Term Care Home,Respiratory,Coronavirus*
+819,Retirement Home,Respiratory,COVID-19
+820,Long-Term Care Home,Respiratory,Unable to identify
+821,Long-Term Care Home,Respiratory,COVID-19
+822,Hospital (Acute Care),Respiratory,COVID-19
+823,Long-Term Care Home,Respiratory,COVID-19
+824,Long-Term Care Home,Respiratory,COVID-19
+825,Long-Term Care Home,Respiratory,COVID-19
+826,Long-Term Care Home,Enteric,Unable to identify
+827,Long-Term Care Home,Respiratory,COVID-19
+828,Hospital (Chronic Care),Respiratory,COVID-19
+829,Long-Term Care Home,Respiratory,Rhinovirus
+830,Hospital (Chronic Care),Respiratory,COVID-19
+831,Long-Term Care Home,Respiratory,COVID-19
+832,Long-Term Care Home,Respiratory,Coronavirus*
+833,Retirement Home,Respiratory,Respiratory syncytial virus
+834,Long-Term Care Home,Respiratory,Coronavirus*
+835,Long-Term Care Home,Enteric,Unable to identify
+836,Retirement Home,Respiratory,COVID-19
+837,Hospital (Acute Care),Respiratory,COVID-19
+838,Long-Term Care Home,Respiratory,COVID-19
+839,Retirement Home,Respiratory,COVID-19
+840,Hospital (Chronic Care),Respiratory,COVID-19
+841,Hospital (Chronic Care),Respiratory,COVID-19
+842,Retirement Home,Enteric,Unable to identify
+843,Hospital (Chronic Care),Respiratory,COVID-19
+844,Long-Term Care Home,Respiratory,Unable to identify
+845,Long-Term Care Home,Respiratory,Respiratory syncytial virus
+846,Long-Term Care Home,Respiratory,COVID-19
+847,Long-Term Care Home,Respiratory,Metapneumovirus
+848,Hospital (Acute Care),Respiratory,COVID-19
+849,Hospital (Acute Care),Respiratory,COVID-19
+850,Retirement Home,Respiratory,COVID-19
+851,Long-Term Care Home,Respiratory,Rhinovirus
+852,Long-Term Care Home,Respiratory,COVID-19
+853,Long-Term Care Home,Respiratory,COVID-19
+854,Hospital (Acute Care),Respiratory,COVID-19
+855,Long-Term Care Home,Enteric,Norovirus
+856,Long-Term Care Home,Respiratory,Enterovirus/Rhinovirus
+857,Transitional Care,Respiratory,COVID-19
+858,Long-Term Care Home,Respiratory,COVID-19
+859,Long-Term Care Home,Respiratory,COVID-19
+860,Long-Term Care Home,Respiratory,Respiratory syncytial virus
+861,Hospital (Chronic Care),Respiratory,Metapneumovirus
+862,Hospital (Chronic Care),Respiratory,Enterovirus/Rhinovirus
+863,Hospital (Acute Care),Respiratory,Influenza A (Not subtyped)
+864,Long-Term Care Home,Respiratory,COVID-19
+865,Long-Term Care Home,Respiratory,Coronavirus*
+866,Retirement Home,Respiratory,Coronavirus*
+867,Long-Term Care Home,Respiratory,Rhinovirus
+868,Hospital (Chronic Care),Respiratory,Respiratory syncytial virus
+869,Long-Term Care Home,Respiratory,Unable to identify
+870,Hospital (Chronic Care),Respiratory,COVID-19
+871,Hospital (Acute Care),Respiratory,COVID-19
+872,Long-Term Care Home,Enteric,Norovirus
+873,Hospital (Chronic Care),Respiratory,COVID-19
+874,Long-Term Care Home,Enteric,Unable to identify
+875,Long-Term Care Home,Respiratory,Enterovirus/Rhinovirus
+876,Long-Term Care Home,Respiratory,COVID-19
+877,Hospital (Acute Care),Respiratory,COVID-19
+878,Long-Term Care Home,Respiratory,COVID-19
+879,Long-Term Care Home,Respiratory,Enterovirus
+880,Long-Term Care Home,Respiratory,Parainfluenza
+881,Retirement Home,Respiratory,COVID-19
+882,Retirement Home,Respiratory,COVID-19
+883,Long-Term Care Home,Respiratory,COVID-19
+884,Hospital (Psychiatric),Respiratory,COVID-19
+885,Long-Term Care Home,Enteric,Norovirus
+886,Long-Term Care Home,Respiratory,Parainfluenza
+887,Long-Term Care Home,Respiratory,COVID-19
+888,Retirement Home,Respiratory,COVID-19
+889,Hospital (Acute Care),Respiratory,COVID-19
+890,Long-Term Care Home,Respiratory,COVID-19
+891,Retirement Home,Respiratory,COVID-19
+892,Long-Term Care Home,Respiratory,Coronavirus*
+893,Retirement Home,Enteric,Unable to identify
+894,Long-Term Care Home,Enteric,Unable to identify
+895,Long-Term Care Home,Respiratory,COVID-19
+896,Retirement Home,Respiratory,COVID-19
+897,Long-Term Care Home,Respiratory,COVID-19
+898,Long-Term Care Home,Respiratory,Rhinovirus
+899,Long-Term Care Home,Respiratory,Coronavirus*
+900,Long-Term Care Home,Respiratory,Rhinovirus
+901,Long-Term Care Home,Respiratory,Rhinovirus
+902,Long-Term Care Home,Respiratory,COVID-19
+903,Hospital (Chronic Care),Enteric,Norovirus
+904,Long-Term Care Home,Respiratory,COVID-19
+905,Retirement Home,Respiratory,COVID-19
+906,Hospital (Acute Care),Other,CPE Unspecified (KPC)
+907,Long-Term Care Home,Respiratory,COVID-19
+908,Hospital (Chronic Care),Respiratory,COVID-19
+909,Long-Term Care Home,Respiratory,Respiratory syncytial virus
+910,Hospital (Acute Care),Respiratory,COVID-19
+911,Long-Term Care Home,Respiratory,COVID-19
+912,Long-Term Care Home,Respiratory,COVID-19
+913,Long-Term Care Home,Respiratory,Respiratory syncytial virus
+914,Long-Term Care Home,Respiratory,COVID-19
+915,Retirement Home,Respiratory,Respiratory syncytial virus
+916,Hospital (Acute Care),Respiratory,COVID-19
+917,Hospital (Chronic Care),Respiratory,Enterovirus
+918,Long-Term Care Home,Respiratory,COVID-19
+919,Long-Term Care Home,Respiratory,COVID-19
+920,Long-Term Care Home,Respiratory,Parainfluenza
+921,Long-Term Care Home,Respiratory,COVID-19
+922,Long-Term Care Home,Respiratory,COVID-19
+923,Hospital (Acute Care),Respiratory,COVID-19
+924,Long-Term Care Home,Respiratory,Unable to identify
+925,Long-Term Care Home,Respiratory,Coronavirus*
+926,Retirement Home,Respiratory,COVID-19
+927,Long-Term Care Home,Respiratory,COVID-19
+928,Hospital (Acute Care),Respiratory,COVID-19
+929,Hospital (Chronic Care),Respiratory,COVID-19
+930,Long-Term Care Home,Respiratory,COVID-19
+931,Long-Term Care Home,Enteric,Unable to identify
+932,Retirement Home,Enteric,Norovirus
+933,Long-Term Care Home,Respiratory,Respiratory syncytial virus
+934,Long-Term Care Home,Respiratory,Parainfluenza
+935,Hospital (Chronic Care),Respiratory,COVID-19
+936,Long-Term Care Home,Respiratory,Parainfluenza
+937,Retirement Home,Respiratory,Influenza A (Not subtyped)
+938,Retirement Home,Enteric,Norovirus
+939,Retirement Home,Respiratory,COVID-19
+940,Retirement Home,Respiratory,COVID-19
+941,Long-Term Care Home,Respiratory,Influenza A (Not subtyped)
+942,Long-Term Care Home,Enteric,Unable to identify
+943,Long-Term Care Home,Respiratory,COVID-19
+944,Long-Term Care Home,Respiratory,Respiratory syncytial virus
+945,Hospital (Acute Care),Respiratory,COVID-19
+946,Hospital (Psychiatric),Respiratory,COVID-19
+947,Long-Term Care Home,Respiratory,COVID-19
+948,Hospital (Chronic Care),Respiratory,COVID-19
+949,Long-Term Care Home,Respiratory,Metapneumovirus
+950,Long-Term Care Home,Respiratory,COVID-19
+951,Long-Term Care Home,Respiratory,Respiratory syncytial virus
+952,Long-Term Care Home,Respiratory,COVID-19
+953,Long-Term Care Home,Respiratory,COVID-19
+954,Long-Term Care Home,Respiratory,COVID-19
+955,Long-Term Care Home,Respiratory,Parainfluenza
+956,Long-Term Care Home,Respiratory,COVID-19
+957,Long-Term Care Home,Respiratory,Metapneumovirus
+958,Long-Term Care Home,Respiratory,Rhinovirus
+959,Long-Term Care Home,Respiratory,Unable to identify
+960,Long-Term Care Home,Respiratory,Respiratory syncytial virus
+961,Long-Term Care Home,Respiratory,Respiratory syncytial virus
+962,Long-Term Care Home,Respiratory,Coronavirus*
+963,Hospital (Acute Care),Respiratory,COVID-19
+964,Long-Term Care Home,Respiratory,Respiratory syncytial virus
+965,Retirement Home,Respiratory,COVID-19
+966,Hospital (Acute Care),Respiratory,COVID-19
+967,Hospital (Chronic Care),Respiratory,COVID-19
+968,Long-Term Care Home,Respiratory,COVID-19
+969,Long-Term Care Home,Respiratory,Respiratory syncytial virus
+970,Long-Term Care Home,Respiratory,Respiratory syncytial virus
+971,Hospital (Acute Care),Respiratory,COVID-19
+972,Retirement Home,Respiratory,COVID-19
+973,Hospital (Acute Care),Respiratory,COVID-19
+974,Retirement Home,Enteric,Unable to identify
+975,Long-Term Care Home,Respiratory,COVID-19
+976,Long-Term Care Home,Respiratory,Parainfluenza PIV III
+977,Long-Term Care Home,Respiratory,COVID-19
+978,Hospital (Acute Care),Respiratory,COVID-19
+979,Long-Term Care Home,Respiratory,Parainfluenza
+980,Hospital (Acute Care),Respiratory,COVID-19
+981,Long-Term Care Home,Respiratory,Coronavirus*
+982,Hospital (Acute Care),Respiratory,COVID-19
+983,Hospital (Chronic Care),Respiratory,Influenza A (H3)
+984,Long-Term Care Home,Respiratory,Coronavirus*
+985,Long-Term Care Home,Respiratory,COVID-19
+986,Long-Term Care Home,Respiratory,Unable to identify
+987,Retirement Home,Respiratory,COVID-19
+988,Hospital (Chronic Care),Respiratory,COVID-19
+989,Long-Term Care Home,Respiratory,COVID-19
+990,Long-Term Care Home,Respiratory,Parainfluenza
+991,Retirement Home,Respiratory,Respiratory syncytial virus
+992,Retirement Home,Enteric,Norovirus
+993,Long-Term Care Home,Respiratory,COVID-19
+994,Retirement Home,Respiratory,COVID-19
+995,Retirement Home,Respiratory,COVID-19
+996,Transitional Care,Respiratory,COVID-19
+997,Retirement Home,Respiratory,COVID-19
+998,Hospital (Acute Care),Respiratory,Influenza A (Not subtyped)
+999,Long-Term Care Home,Respiratory,COVID-19
+1000,Hospital (Chronic Care),Respiratory,COVID-19
+1001,Long-Term Care Home,Respiratory,Unable to identify
+1002,Long-Term Care Home,Respiratory,Unable to identify
+1003,Hospital (Psychiatric),Respiratory,COVID-19
+1004,Long-Term Care Home,Respiratory,Enterovirus/Rhinovirus
+1005,Retirement Home,Respiratory,Parainfluenza
+1006,Long-Term Care Home,Respiratory,Respiratory syncytial virus
+1007,Long-Term Care Home,Respiratory,Unable to identify
+1008,Long-Term Care Home,Respiratory,Coronavirus*
+1009,Hospital (Chronic Care),Respiratory,COVID-19
+1010,Hospital (Chronic Care),Respiratory,COVID-19
+1011,Retirement Home,Respiratory,COVID-19
+1012,Retirement Home,Respiratory,Unable to identify
+1013,Long-Term Care Home,Respiratory,Respiratory syncytial virus
+1014,Long-Term Care Home,Respiratory,COVID-19
+1015,Long-Term Care Home,Respiratory,COVID-19
+1016,Long-Term Care Home,Respiratory,Enterovirus
+1017,Retirement Home,Respiratory,Influenza A (Not subtyped)
+1018,Hospital (Acute Care),Respiratory,COVID-19
+1019,Hospital (Acute Care),Respiratory,Respiratory syncytial virus
+1020,Retirement Home,Respiratory,Coronavirus*
+1021,Retirement Home,Respiratory,COVID-19
+1022,Retirement Home,Respiratory,COVID-19
+1023,Retirement Home,Respiratory,Respiratory syncytial virus
+1024,Long-Term Care Home,Respiratory,Respiratory syncytial virus
+1025,Retirement Home,Enteric,Unable to identify
+1026,Hospital (Chronic Care),Respiratory,COVID-19
+1027,Hospital (Chronic Care),Respiratory,COVID-19
+1028,Hospital (Chronic Care),Respiratory,COVID-19
+1029,Retirement Home,Respiratory,COVID-19
+1030,Transitional Care,Respiratory,COVID-19
+1031,Retirement Home,Respiratory,COVID-19
+1032,Long-Term Care Home,Respiratory,Coronavirus*
+1033,Retirement Home,Respiratory,COVID-19
+1034,Long-Term Care Home,Respiratory,COVID-19
+1035,Hospital (Chronic Care),Respiratory,COVID-19
+1036,Hospital (Acute Care),Respiratory,COVID-19
+1037,Retirement Home,Enteric,Norovirus
+1038,Long-Term Care Home,Respiratory,Respiratory syncytial virus
+1039,Long-Term Care Home,Respiratory,COVID-19
+1040,Hospital (Acute Care),Respiratory,COVID-19
+1041,Retirement Home,Respiratory,Respiratory syncytial virus
+1042,Retirement Home,Respiratory,COVID-19
+1043,Retirement Home,Enteric,Unable to identify
+1044,Retirement Home,Respiratory,COVID-19
+1045,Long-Term Care Home,Respiratory,COVID-19
+1046,Hospital (Acute Care),Respiratory,COVID-19
+1047,Hospital (Chronic Care),Respiratory,COVID-19
+1048,Long-Term Care Home,Respiratory,Influenza A (Not subtyped)
+1049,Long-Term Care Home,Respiratory,Respiratory syncytial virus
+1050,Long-Term Care Home,Respiratory,Parainfluenza
+1051,Long-Term Care Home,Respiratory,COVID-19
+1052,Long-Term Care Home,Respiratory,COVID-19
+1053,Long-Term Care Home,Respiratory,COVID-19
+1054,Retirement Home,Respiratory,COVID-19
+1055,Hospital (Acute Care),Respiratory,COVID-19
+1056,Long-Term Care Home,Respiratory,COVID-19
+1057,Hospital (Chronic Care),Respiratory,COVID-19
+1058,Long-Term Care Home,Respiratory,COVID-19
+1059,Hospital (Chronic Care),Respiratory,Respiratory syncytial virus
+1060,Hospital (Acute Care),Respiratory,COVID-19
+1061,Retirement Home,Respiratory,COVID-19
+1062,Long-Term Care Home,Respiratory,COVID-19
+1063,Hospital (Chronic Care),Respiratory,COVID-19
+1064,Long-Term Care Home,Respiratory,COVID-19
+1065,Long-Term Care Home,Respiratory,COVID-19
+1066,Long-Term Care Home,Respiratory,Influenza A (Not subtyped)

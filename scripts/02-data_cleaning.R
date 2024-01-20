@@ -1,44 +1,47 @@
 #### Preamble ####
-# Purpose: Cleans the raw plane data recorded by two observers..... [...UPDATE THIS...]
-# Author: Rohan Alexander [...UPDATE THIS...]
-# Date: 6 April 2023 [...UPDATE THIS...]
-# Contact: rohan.alexander@utoronto.ca [...UPDATE THIS...]
-# License: MIT
-# Pre-requisites: [...UPDATE THIS...]
-# Any other information needed? [...UPDATE THIS...]
+# Purpose: Cleans the raw Toronto healthcare outbreaks dataset obtained in
+# "01-download_data.R".
+# Author: Benny Rochwerg
+# Date: January 23, 2024
+# Contact: 4321benny@gmail.com
+# Pre-requisites: Run the file "01-download_data.R".
 
-#### Workspace setup ####
+#### Loading Packages ####
+
 library(tidyverse)
 
-#### Clean data ####
-raw_data <- read_csv("inputs/data/plane_data.csv")
+#### Cleaning the Dataset ####
 
-cleaned_data <-
-  raw_data |>
-  janitor::clean_names() |>
-  select(wing_width_mm, wing_length_mm, flying_time_sec_first_timer) |>
-  filter(wing_width_mm != "caw") |>
-  mutate(
-    flying_time_sec_first_timer = if_else(flying_time_sec_first_timer == "1,35",
-                                   "1.35",
-                                   flying_time_sec_first_timer)
-  ) |>
-  mutate(wing_width_mm = if_else(wing_width_mm == "490",
-                                 "49",
-                                 wing_width_mm)) |>
-  mutate(wing_width_mm = if_else(wing_width_mm == "6",
-                                 "60",
-                                 wing_width_mm)) |>
-  mutate(
-    wing_width_mm = as.numeric(wing_width_mm),
-    wing_length_mm = as.numeric(wing_length_mm),
-    flying_time_sec_first_timer = as.numeric(flying_time_sec_first_timer)
-  ) |>
-  rename(flying_time = flying_time_sec_first_timer,
-         width = wing_width_mm,
-         length = wing_length_mm
-         ) |> 
-  tidyr::drop_na()
+outbreak_raw_data <- read_csv("inputs/data/raw_data.csv")
 
-#### Save data ####
-write_csv(cleaned_data, "outputs/data/analysis_data.csv")
+# This code is based on knowledge from Alexander (2023).
+
+outbreak_cleaned_data <-
+  outbreak_raw_data |>
+  
+  # Only including the columns of interest
+  select(`_id`, `Outbreak Setting`, `Type of Outbreak`, `Causative Agent-1`) |>
+  
+  # Renaming the column headers
+  rename(`ID` = `_id`,
+         `Type of Location` = `Outbreak Setting`,
+         `Type of Outbreak` = `Type of Outbreak`,
+         `Outbreak First Known Cause` = `Causative Agent-1`) |>
+  
+  # Renaming the Type of Location entries
+  mutate(`Type of Location` = case_match(`Type of Location`,
+                                         "LTCH" ~
+                                           "Long-Term Care Home",
+                                         "Hospital-Acute Care" ~
+                                           "Hospital (Acute Care)",
+                                         "Retirement Home" ~
+                                           "Retirement Home",
+                                         "Hospital-Chronic Care" ~
+                                           "Hospital (Chronic Care)",
+                                         "Hospital-Psychiatric" ~
+                                           "Hospital (Psychiatric)",
+                                         "Transitional Care" ~
+                                           "Transitional Care"))
+
+#### Saving the Cleaned Dataset ####
+write_csv(outbreak_cleaned_data, "outputs/data/cleaned_data.csv")
