@@ -1,17 +1,34 @@
 ---
 title: "My title"
-subtitle: "My subtitle if needed"
 author: 
-  - First author
-  - Another author
-thanks: "Code and data are available at: LINK."
-date: today
+  - Benny Rochwerg
+thanks: "A GitHub Repository containing all data, R code, and other files used in this investigation is located here: <https://github.com/bennyrochwerg/healthcare-outbreaks-toronto>"
+date: 01-23-2024
 date-format: long
 abstract: "First sentence. Second sentence. Third sentence. Fourth sentence."
 format: pdf
 number-sections: true
 bibliography: references.bib
 ---
+
+# Introduction
+
+
+# Data
+
+## Sketches
+
+Sketches depicting both the desired dataset and some of the graphs that will be generated in this analysis are available in the GitHub Repository.
+
+The R programming language was used to conduct this analysis [@citeR], along with the `tidyverse` package [@citetidyverse].
+
+# Acknowledgements
+
+Some of the R code used to create this work was adapted from @tellingstorieswithdata.
+
+
+
+
 
 ```{r}
 #| include: false
