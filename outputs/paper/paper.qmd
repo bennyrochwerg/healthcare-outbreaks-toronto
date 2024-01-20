@@ -20,7 +20,7 @@ bibliography: references.bib
 
 Sketches depicting both the desired dataset and some of the graphs that will be generated in this analysis are available in the GitHub Repository.
 
-The R programming language was used to conduct this analysis [@citeR], along with the `tidyverse` package [@citetidyverse].
+The R programming language was used to conduct this analysis [@citeR], along with the `janitor` [@citejanitor], `tidyverse` [@citetidyverse], and `opendatatoronto` [@citeopendatatoronto] packages.
 
 # Acknowledgements
 

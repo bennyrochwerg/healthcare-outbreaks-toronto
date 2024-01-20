@@ -1,26 +1,25 @@
 #### Preamble ####
-# Purpose: Downloads and saves the data from [...UPDATE THIS...]
-# Author: Rohan Alexander [...UPDATE THIS...]
-# Date: 11 February 2023 [...UPDATE THIS...]
-# Contact: rohan.alexander@utoronto.ca [...UPDATE THIS...]
-# License: MIT
-# Pre-requisites: [...UPDATE THIS...]
-# Any other information needed? [...UPDATE THIS...]
+# Purpose: Downloads the data from the opendatatoronto package (Gelfand 2022)
+# and saves the dataset for use in the main paper.
+# Author: Benny Rochwerg
+# Date: January 23, 2024
+# Contact: 4321benny@gmail.com
+# Pre-requisites: Installation of the opendatatoronto (Gelfand 2022) and
+# tidyverse (Wickham et al. 2019) packages.
 
+#### Loading Packages ####
 
-#### Workspace setup ####
 library(opendatatoronto)
 library(tidyverse)
-# [...UPDATE THIS...]
 
-#### Download data ####
-# [...ADD CODE HERE TO DOWNLOAD...]
+#### Downloading the Dataset ####
 
+outbreak_raw_data <-
+  search_packages("Outbreaks in Toronto Healthcare Institutions") |>
+  list_package_resources() |>
+  filter(name == "ob_report_2023") |>
+  get_resource()
 
+#### Saving the Dataset ####
 
-#### Save data ####
-# [...UPDATE THIS...]
-# change the_raw_data to whatever name you assigned when you downloaded it.
-write_csv(the_raw_data, "inputs/data/raw_data.csv") 
-
-         
+write_csv(outbreak_raw_data, "inputs/data/raw_data.csv")
