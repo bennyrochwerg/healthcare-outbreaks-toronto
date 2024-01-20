@@ -4,7 +4,7 @@
 # Author: Benny Rochwerg
 # Date: January 23, 2024
 # Contact: 4321benny@gmail.com
-# Pre-requisites: Installation of the opendatatoronto (Gelfand 2022) and
+# Pre-requisites: Install the opendatatoronto (Gelfand 2022) and
 # tidyverse (Wickham et al. 2019) packages.
 
 #### Loading Packages ####

@@ -61,7 +61,10 @@ outbreak_cleaned_data <-
                       "CPE Enterobacter unspecified (NDM)" ~ "CPE",
                       "CPE Unspecified (KPC)" ~ "CPE",
                       "Pending" ~ "Pending/Unknown",
-                      "Unable to identify" ~ "Pending/Unknown"))
+                      "Unable to identify" ~ "Pending/Unknown")) |>
+  
+  # Changing the class of the ID column to "integer"
+  mutate(`ID` = as.integer(`ID`))
 
 #### Saving the Cleaned Dataset ####
 
