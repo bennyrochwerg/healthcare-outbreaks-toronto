@@ -33,17 +33,15 @@ library(knitr)
 
 ## Overview {#sec-data-overview}
 
-The dataset used in this analysis is the 2023 installment of "Outbreaks in Toronto Healthcare Institutions" from Toronto Public Health (@tphdataset). In Ontario, the law mandates that respiratory and gastroenteric infections in healthcare facilities are followed and that any outbreaks, regardless of verification, are reported to public health entities such as Toronto Public Health (@tphdataset). Based on this information, Toronto Public Health updates this dataset on a weekly basis (@tphdataset). Moreover, this dataset is considered to be "open data" (@tphdataset) and can be utilized for a variety of purposes as long as an attribution statement (@sec-appendix-attribution) is attached and the link to the City of Toronto's Open Data License is added (@tphlicense).
+The dataset used in this analysis is the 2023 installment of "Outbreaks in Toronto Healthcare Institutions" from Toronto Public Health [@tphdataset]. In Ontario, the law mandates that respiratory and gastroenteric infections in healthcare facilities are followed and that any outbreaks, regardless of verification, are reported to public health entities such as Toronto Public Health [@tphdataset]. Based on this information (or these measurements), Toronto Public Health updates this dataset on a weekly basis [@tphdataset]. Moreover, this dataset is considered to be "open data" [@tphdataset] and can be utilized for a variety of purposes as long as an attribution statement is attached (@sec-appendix-attribution) and the link to the City of Toronto's Open Data License is added [@tphlicense].
 
-The variables included in this analysis are "Type of Location" (named "Outbreak Setting" in the original dataset), which refers to the nature of the healthcare offered at each facility; "Type of Outbreak", which indicates whether each outbreak is respiratory, enteric, or other in nature; and "Outbreak First Known Cause" (named "Causative Agent-1" in the original dataset), which denotes the first discovered pathogen based on at least one of the outbreak's cases (@tphdataset).
+The variables or measurements included in this analysis are "Type of Location" (named "Outbreak Setting" in the original dataset), which refers to the nature of the healthcare offered at each facility; "Type of Outbreak", which indicates whether each outbreak is respiratory, enteric, or other in nature; and "Outbreak First Known Cause" (named "Causative Agent-1" in the original dataset), which denotes the first discovered pathogen based on at least one of the outbreak's cases [@tphdataset].
 
-Only two other datasets involving outbreaks, titled "COVID-19 Cases in Toronto" and "Daily Shelter & Overnight Service Occupancy & Capacity", could be identified following a search of the City of Toronto's Open Data Catalogue (@tphsearch). However, none of these datasets pertain specifically to healthcare settings in Toronto and were thus not used in this analysis.
+Only two other datasets involving outbreaks, titled "COVID-19 Cases in Toronto" and "Daily Shelter & Overnight Service Occupancy & Capacity", could be identified following a search of the City of Toronto's Open Data Catalogue [@tphsearch]. However, none of these datasets pertain specifically to healthcare settings in Toronto and were thus not used in this analysis.
 
-
+Using the R programming language [@citeR], the `janitor` [@citejanitor] and `tidyverse` [@citetidyverse] packages were used to simulate the dataset and generate tests for it. The `opendatatoronto` [@citeopendatatoronto] and `tidyverse` [@citetidyverse] packages were then applied in order to download the raw Toronto Public Health dataset. Next, the `tidyverse` package [@citetidyverse] was used to clean the raw dataset and test the cleaned dataset.
 
 ## Results {#sec-data-results}
-
-After loading the dataset using the R programming language [@citeR] and the `here` package [@citehere], (other packages), tables and graphs were created using R code adapted from @tellingstorieswithdata.
 
 ```{r}
 #| echo: false
@@ -54,6 +52,8 @@ After loading the dataset using the R programming language [@citeR] and the `her
 
 outbreak_cleaned_data <- read_csv(here::here("outputs/data/cleaned_data.csv"))
 ```
+
+After loading the dataset using the R programming language [@citeR] and the `here` package [@citehere], the `tidyverse` [@citetidyverse] and `knitr` [@citeknitr] packages were used to generate tables and graphs. In doing so, R code was adapted from @tellingstorieswithdata.
 
 ```{r}
 #| echo: false
@@ -189,8 +189,6 @@ outbreak_cleaned_data |>
 
 @tbl-outbreaks-by-first-known-cause and @fig-outbreaks-by-first-known-cause illustrate that the majority of Toronto healthcare outbreaks have COVID-19 as their first known cause (approximately 66\%). This is followed by rhinovirus (approximately 7\%), respiratory syncytial virus (approximately 5\%), parainfluenza (approximately 3\%), influenza A (approximately 3\%), seasonal coronavirus (approximately 3\%), metapneumovirus (approximately 2\%), norovirus (approximately 2\%), enterovirus/rhinovirus (approximately 1\%), enterovirus (approximately 1\%), CPE (less than 1\%), neonatal Group B streptococcal disease (less than 1\%), and streptococcus pyogenes (less than 1\%). Approximately 7\% of outbreaks had a pending or unknown first known cause. Note that these percentages do not add up to 100\% as the proportions in @tbl-outbreaks-by-first-known-cause were rounded to two decimal places.
 
-The R programming language was used to conduct this analysis [@citeR], along with the `janitor` [@citejanitor], `tidyverse` [@citetidyverse], and `opendatatoronto` [@citeopendatatoronto] packages.
-
 # Acknowledgements {#sec-acknowledgements}
 
 Some of the R code used to create this work was adapted from @tellingstorieswithdata.
@@ -231,7 +229,7 @@ Sketches depicting both the desired dataset and the graphs to be generated in th
 
 ## Attribution Statement {#sec-appendix-attribution}
 
-"Contains information licensed under the Open Government Licence – Toronto" (@tphlicense).
+"Contains information licensed under the Open Government Licence – Toronto" [@tphlicense].
 
 \newpage
 
