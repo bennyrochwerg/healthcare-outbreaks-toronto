@@ -11,14 +11,44 @@ number-sections: true
 bibliography: references.bib
 ---
 
-# Introduction
+```{r}
+#### Loading Packages ####
+
+# install.packages("tidyverse")
+library(tidyverse)
+```
 
 
-# Data
+# Introduction {#introduction}
+
+
+# Data {#data}
 
 ## Sketches
 
 Sketches depicting both the desired dataset and some of the graphs that will be generated in this analysis are available in the GitHub Repository.
+
+## Visualizing the data
+
+```{r}
+#### Creating Tables and Graphs ####
+
+# Loading the cleaned dataset
+
+# outbreak_cleaned_data <- read_csv("outputs/data/cleaned_data.csv")
+
+# Creating a graph to depict the number of outbreaks by location type
+
+#| label: num-outbreaks-by-location
+#| fig-cap: Number of Toronto healthcare outbreaks by type of location in 2023
+#| echo: false
+
+# Obtaining the number of outbreaks by type of location
+# The knowledge used to write this code was gained in STA304H1.
+
+
+```
+
 
 The R programming language was used to conduct this analysis [@citeR], along with the `janitor` [@citejanitor], `tidyverse` [@citetidyverse], and `opendatatoronto` [@citeopendatatoronto] packages.
 
