@@ -62,9 +62,6 @@ outbreak_cleaned_data <-
                       "CPE Unspecified (KPC)" ~ "CPE",
                       "Pending" ~ "Pending/Unknown",
                       "Unable to identify" ~ "Pending/Unknown")) |>
-  
-  # Changing the class of the ID column to "integer"
-  mutate(`ID` = as.integer(`ID`))
 
 #### Saving the Cleaned Dataset ####
 

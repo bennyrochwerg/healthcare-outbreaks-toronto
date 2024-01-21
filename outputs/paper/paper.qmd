@@ -8,66 +8,192 @@ date-format: long
 abstract: "First sentence. Second sentence. Third sentence. Fourth sentence."
 format: pdf
 number-sections: true
+toc: true
 bibliography: references.bib
 ---
 
 ```{r}
+#| echo: false
+#| warning: false
 #### Loading Packages ####
 
 # install.packages("tidyverse")
+# install.packages("here")
+# install.packages("knitr")
 library(tidyverse)
+library(here)
+library(knitr)
 ```
 
+# Introduction {#sec-introduction}
 
-# Introduction {#introduction}
 
 
-# Data {#data}
+# Data {#sec-data}
 
-## Sketches
+## Overview {#sec-data-overview}
 
-Sketches depicting both the desired dataset and some of the graphs that will be generated in this analysis are available in the GitHub Repository.
+The dataset used in this analysis is the 2023 installment of "Outbreaks in Toronto Healthcare Institutions" from Toronto Public Health (@tphdataset). In Ontario, the law mandates that respiratory and gastroenteric infections in healthcare facilities are followed and that any outbreaks, regardless of verification, are reported to public health entities such as Toronto Public Health (@tphdataset). Based on this information, Toronto Public Health updates this dataset on a weekly basis (@tphdataset). Moreover, this dataset is considered to be "open data" (@tphdataset) and can be utilized for a variety of purposes as long as an attribution statement (@sec-appendix-attribution) is attached and the link to the City of Toronto's Open Data License is added (@tphlicense).
 
-## Visualizing the data
+The variables included in this analysis are "Type of Location" (named "Outbreak Setting" in the original dataset), which refers to the nature of the healthcare offered at each facility; "Type of Outbreak", which indicates whether each outbreak is respiratory, enteric, or other in nature; and "Outbreak First Known Cause" (named "Causative Agent-1" in the original dataset), which denotes the first discovered pathogen based on at least one of the outbreak's cases (@tphdataset).
+
+Only two other datasets involving outbreaks, titled "COVID-19 Cases in Toronto" and "Daily Shelter & Overnight Service Occupancy & Capacity", could be identified following a search of the City of Toronto's Open Data Catalogue (@tphsearch). However, none of these datasets pertain specifically to healthcare settings in Toronto and were thus not used in this analysis.
+
+
+
+## Results {#sec-data-results}
+
+After loading the dataset using the R programming language [@citeR] and the `here` package [@citehere], (other packages), tables and graphs were created using R code adapted from @tellingstorieswithdata.
 
 ```{r}
-#### Creating Tables and Graphs ####
-
-# Loading the cleaned dataset
-
-# outbreak_cleaned_data <- read_csv("outputs/data/cleaned_data.csv")
-
-# Creating a graph to depict the number of outbreaks by location type
-
-#| label: num-outbreaks-by-location
-#| fig-cap: Number of Toronto healthcare outbreaks by type of location in 2023
 #| echo: false
-
-# Obtaining the number of outbreaks by type of location
-# The knowledge used to write this code was gained in STA304H1.
-
-
-```
-
-
-The R programming language was used to conduct this analysis [@citeR], along with the `janitor` [@citejanitor], `tidyverse` [@citetidyverse], and `opendatatoronto` [@citeopendatatoronto] packages.
-
-# Acknowledgements
-
-Some of the R code used to create this work was adapted from @tellingstorieswithdata.
-
-
-
-
-
-```{r}
-#| include: false
 #| warning: false
 #| message: false
 
-library(tidyverse)
-library(palmerpenguins)
+#### Loading the Cleaned Dataset ####
+
+outbreak_cleaned_data <- read_csv(here::here("outputs/data/cleaned_data.csv"))
 ```
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: tbl-outbreaks-by-location-type
+#| tbl-cap: "Outbreaks by type of healthcare location in Toronto in 2023"
+#| tbl-colwidths: [50, 20, 20]
+
+#### First Table ####
+
+# This code is based on knowledge from Alexander (2023).
+
+outbreak_cleaned_data |>
+  count(`Type of Location`) |>
+  rename(`Type of location` = `Type of Location`,
+         `Number of outbreaks` = n) |>
+  mutate(`Proportion of total outbreaks` =
+           round(`Number of outbreaks` / nrow(outbreak_cleaned_data), 2)) |>
+  arrange(desc(`Number of outbreaks`)) |>
+  kable()
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-outbreaks-by-location-type
+#| fig-cap: "Number of outbreaks by type of healthcare location in Toronto in 2023"
+
+#### First Graph ####
+
+# This code is based on knowledge from Alexander (2023).
+
+outbreak_cleaned_data |>
+  count(`Type of Location`) |>
+  # The reorder function used for sorting the columns in descending order was obtained
+  # from Stack Overflow:
+  # https://stackoverflow.com/questions/25664007/reorder-bars-in-geom-bar-ggplot2-by-value
+  ggplot(mapping = aes(x = reorder(`Type of Location`, n), y = n)) +
+  geom_col() +
+  theme_bw() +
+  labs(x = "Type of location", y = "Number of outbreaks") +
+  coord_flip()
+```
+
+@tbl-outbreaks-by-location-type and @fig-outbreaks-by-location-type illustrate that long-term care homes comprise a majority (approximately 56\%) of the total number of healthcare outbreaks in Toronto. This is followed by retirement homes (approximately 18\%), chronic care settings in hospitals (approximately 12\%), acute care settings in hospitals (approximately 10\%), psychiatric care settings in hospitals (approximately 2\%), and transitional care locations (approximately 1\%). Note that these percentages do not add up to 100\% as the proportions in @tbl-outbreaks-by-location-type were rounded to two decimal places.
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: tbl-outbreaks-by-outbreak-type
+#| tbl-cap: "Outbreaks by type of outbreak for Toronto healthcare locations in 2023"
+#| tbl-colwidths: [50, 20, 20]
+
+#### Second Table ####
+
+# This code is based on knowledge from Alexander (2023).
+
+outbreak_cleaned_data |>
+  count(`Type of Outbreak`) |>
+  rename(`Type of outbreak` = `Type of Outbreak`,
+         `Number of outbreaks` = n) |>
+  mutate(`Proportion of total outbreaks` =
+           round(`Number of outbreaks` / nrow(outbreak_cleaned_data), 2)) |>
+  arrange(desc(`Number of outbreaks`)) |>
+  kable()
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-outbreaks-by-outbreak-type
+#| fig-cap: "Number of outbreaks by type of outbreak for Toronto healthcare locations in 2023"
+
+#### Second Graph ####
+
+# This code is based on knowledge from Alexander (2023).
+
+outbreak_cleaned_data |>
+  count(`Type of Outbreak`) |>
+  # The reorder function used for sorting the columns in descending order was obtained
+  # from Stack Overflow:
+  # https://stackoverflow.com/questions/25664007/reorder-bars-in-geom-bar-ggplot2-by-value
+  ggplot(mapping = aes(x = reorder(`Type of Outbreak`, -n), y = n)) +
+  geom_col() +
+  theme_bw() +
+  labs(x = "Type of outbreak", y = "Number of outbreaks")
+```
+
+@tbl-outbreaks-by-outbreak-type and @fig-outbreaks-by-outbreak-type show that the vast majority of healthcare outbreaks in Toronto are respiratory in nature (approximately 95\%). This is followed by enteric outbreaks (approximately 4\%) and other types of outbreaks (less than 1\%). Note that these percentages do not add up to 100\% as the proportions in @tbl-outbreaks-by-outbreak-type were rounded to two decimal places.
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: tbl-outbreaks-by-first-known-cause
+#| tbl-cap: "Outbreaks by first known cause for Toronto healthcare locations in 2023"
+#| tbl-colwidths: [50, 20, 20]
+
+#### Third Table ####
+
+# This code is based on knowledge from Alexander (2023).
+
+outbreak_cleaned_data |>
+  count(`Outbreak First Known Cause`) |>
+  rename(`Outbreak first known cause` = `Outbreak First Known Cause`,
+         `Number of outbreaks` = n) |>
+  mutate(`Proportion of total outbreaks` =
+           round(`Number of outbreaks` / nrow(outbreak_cleaned_data), 2)) |>
+  arrange(desc(`Number of outbreaks`)) |>
+  kable()
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-outbreaks-by-first-known-cause
+#| fig-cap: "Number of outbreaks by first known cause for Toronto healthcare locations in 2023"
+
+#### Third Graph ####
+
+# This code is based on knowledge from Alexander (2023).
+
+outbreak_cleaned_data |>
+  count(`Outbreak First Known Cause`) |>
+  # The reorder function used for sorting the columns in descending order was obtained
+  # from Stack Overflow:
+  # https://stackoverflow.com/questions/25664007/reorder-bars-in-geom-bar-ggplot2-by-value
+  ggplot(mapping = aes(x = reorder(`Outbreak First Known Cause`, n), y = n)) +
+  geom_col() +
+  theme_bw() +
+  labs(x = "Outbreak first known cause", y = "Number of outbreaks") +
+  coord_flip()
+```
+
+@tbl-outbreaks-by-first-known-cause and @fig-outbreaks-by-first-known-cause illustrate that the majority of Toronto healthcare outbreaks have COVID-19 as their first known cause (approximately 66\%). This is followed by rhinovirus (approximately 7\%), respiratory syncytial virus (approximately 5\%), parainfluenza (approximately 3\%), influenza A (approximately 3\%), seasonal coronavirus (approximately 3\%), metapneumovirus (approximately 2\%), norovirus (approximately 2\%), enterovirus/rhinovirus (approximately 1\%), enterovirus (approximately 1\%), CPE (less than 1\%), neonatal Group B streptococcal disease (less than 1\%), and streptococcus pyogenes (less than 1\%). Approximately 7\% of outbreaks had a pending or unknown first known cause. Note that these percentages do not add up to 100\% as the proportions in @tbl-outbreaks-by-first-known-cause were rounded to two decimal places.
+
+The R programming language was used to conduct this analysis [@citeR], along with the `janitor` [@citejanitor], `tidyverse` [@citetidyverse], and `opendatatoronto` [@citeopendatatoronto] packages.
+
+# Acknowledgements {#sec-acknowledgements}
+
+Some of the R code used to create this work was adapted from @tellingstorieswithdata.
 
 
 # Introduction
@@ -78,191 +204,35 @@ The remainder of this paper is structured as follows. @sec-data....
 
 
 
-# Data {#sec-data}
-
-Some of our data is of penguins (@fig-bills), from @palmerpenguins.
-
-```{r}
-#| label: fig-bills
-#| fig-cap: Bills of penguins
-#| echo: false
-
-ggplot(penguins, aes(x = island, fill = species)) +
-  geom_bar(alpha = 0.8) +
-  scale_fill_manual(values = c("darkorange","purple","cyan4"),
-                    guide = "none") +
-  theme_minimal() +
-  facet_wrap(~species, ncol = 1) +
-  coord_flip()
-```
-
-Talk more about it.
-
-And also planes (@fig-planes). (You can change the height and width, but don't worry about doing that until you have finished every other aspect of the paper - Quarto will try to make it look nice and the defaults usually work well once you have enough text.)
-
-```{r}
-#| label: fig-planes
-#| fig-cap: Relationship between wing length and width
-#| echo: false
-#| warning: false
-#| message: false
-
-analysis_data <- read_csv(here::here("outputs/data/analysis_data.csv"))
-
-analysis_data |> 
-  ggplot(aes(x = width, y = length)) +
-  geom_point(alpha = 0.8) +
-  theme_minimal() +
-  labs(x = "Wing width (mm)",
-       y = "Wing length (mm)")
-```
-
-Talk way more about it. 
-
-
-
-# Model
-
-The goal of our modelling strategy is twofold. Firstly,...
-
-Here we briefly describe the Bayesian analysis model used to investigate... Background details and diagnostics are included in [Appendix -@sec-model-details].
-
-## Model set-up
-
-Define $y_i$ as the number of seconds that the plane remained aloft. Then $\beta_i$ is the wing width and $\gamma_i$ is the wing length, both measured in millimeters.  
-
-\begin{align} 
-y_i|\mu_i, \sigma &\sim \mbox{Normal}(\mu_i, \sigma) \\
-\mu_i &= \alpha + \beta_i + \gamma_i\\
-\alpha &\sim \mbox{Normal}(0, 2.5) \\
-\beta &\sim \mbox{Normal}(0, 2.5) \\
-\gamma &\sim \mbox{Normal}(0, 2.5) \\
-\sigma &\sim \mbox{Exponential}(1)
-\end{align}
-
-We run the model in R [@citeR] using the `rstanarm` package of @rstanarm. We use the default priors from `rstanarm`.
-
-
-### Model justification
-
-We expect a positive relationship between the size of the wings and time spent aloft. In particular...
-
-We can use maths by including latex between dollar signs, for instance $\theta$.
-
-
-# Results
-
-Our results are summarized in @tbl-modelresults.
-
-```{r}
-#| echo: false
-#| eval: true
-#| warning: false
-#| message: false
-
-library(rstanarm)
-
-first_model <-
-  readRDS(file = here::here("outputs/models/first_model.rds"))
-```
-
-```{r}
-#| echo: false
-#| eval: true
-#| label: tbl-modelresults
-#| tbl-cap: "Explanatory models of flight time based on wing width and wing length"
-#| warning: false
-
-modelsummary::modelsummary(
-  list(
-    "First model" = first_model
-  ),
-  statistic = "mad",
-  fmt = 2
-)
-```
 
 
 
 
-# Discussion
 
-## First discussion point {#sec-first-point}
+## Discussion {#data-discussion}
 
-If my paper were 10 pages, then should be be at least 2.5 pages. The discussion is a chance to show off what you know and what you learnt from all this. 
+In @sec-data-results, it was observed that long-term care homes had the greatest proportion of total outbreaks among healthcare facilities in Toronto in 2023 (@tbl-outbreaks-by-location-type and @fig-outbreaks-by-location-type), that approximately 95\% of outbreaks were respiratory in nature (@tbl-outbreaks-by-outbreak-type and @fig-outbreaks-by-outbreak-type), and that COVID-19 was the first known cause of a majority of outbreaks (@tbl-outbreaks-by-first-known-cause and @fig-outbreaks-by-first-known-cause).
 
-## Second discussion point
+All three of these results share common origins. For instance, in October 2022, the Government of Ontario removed a masking requirement for caregivers and visitors in long-term care homes [@cbcltch], whose residents are primarily at or above 65 years of age as reported in 2018 [@clri]. Since individuals aged 60 years or older are more likely to experience worse health effects after contracting COVID-19, the Public Health Agency of Canada recommends that they wear a respirator or mask to limit the transmission of this pathogen [@phaccovid]. As a result, it seems that the Government of Ontario did not heed this advice, possibly contributing to the large proportion of disease outbreaks (which include COVID-19) in Toronto long-term care homes in 2023. This appears to follow a long-standing trend in Ontario long-term care homes. For example, at the start of the COVID-19 pandemic, long-term care homes in Ontario experienced a sizable increase in COVID-19 cases [@cbcinquiry]. This was potentially made worse by the fact that not all of these facilities enforced mask-wearing and that long-term care homes were passed over for personal protective equipment in favour of hospitals [@cbcinquiry]. Moreover, the fact that several hospitals in Toronto curtailed their mask requirements in June and July of 2023 [@hospitalmasks] likely contributed to the large volume of respiratory disease outbreaks observed in @tbl-outbreaks-by-outbreak-type and @fig-outbreaks-by-outbreak-type.
 
-## Third discussion point
+Although over 1,000 data points pertaining to healthcare outbreaks in Toronto in 2023 were examined in this analysis, several limitations were present. For instance, asymptomatic disease outbreaks were likely not included in the studied dataset as they may not have been noticeable enough to be reported, contributing to an underestimate of the total number of outbreaks. In addition, only the first known cause of each outbreak was examined for clarity purposes. This also likely led to an underestimate of the number of outbreaks associated with each disease.
 
-## Weaknesses and next steps
-
-Weaknesses and next steps should also be included.
+Future research should be conducted to assess the state of disease outbreaks in long-term care homes in particular, both in Toronto and across Canada, in order to gain deeper insight into this critical issue. The prevalence of disease outbreaks in other settings, such as schools and workplaces, should also be investigated to expand on this analysis.
 
 \newpage
 
 \appendix
 
-# Appendix {-}
+# Appendix {#sec-appendix}
 
+## Dataset and Graph Sketches {#sec-appendix-sketches}
 
-# Additional data details
+Sketches depicting both the desired dataset and the graphs to be generated in this analysis are available in the GitHub Repository.
 
-# Model details {#sec-model-details}
+## Attribution Statement {#sec-appendix-attribution}
 
-## Posterior predictive check
-
-In @fig-ppcheckandposteriorvsprior-1 we implement a posterior predictive check. This shows...
-
-In @fig-ppcheckandposteriorvsprior-2 we compare the posterior with the prior. This shows... 
-
-```{r}
-#| eval: true
-#| echo: false
-#| message: false
-#| warning: false
-#| label: fig-ppcheckandposteriorvsprior
-#| layout-ncol: 2
-#| fig-cap: "Examining how the model fits, and is affected by, the data"
-#| fig-subcap: ["Posterior prediction check", "Comparing the posterior with the prior"]
-
-pp_check(first_model) +
-  theme_classic() +
-  theme(legend.position = "bottom")
-
-posterior_vs_prior(first_model) +
-  theme_minimal() +
-  scale_color_brewer(palette = "Set1") +
-  theme(legend.position = "bottom") +
-  coord_flip()
-```
-
-## Diagnostics
-
-@fig-stanareyouokay-1 is a trace plot. It shows... This suggests...
-
-@fig-stanareyouokay-2 is a Rhat plot. It shows... This suggests...
-
-```{r}
-#| echo: false
-#| eval: true
-#| message: false
-#| warning: false
-#| label: fig-stanareyouokay
-#| fig-cap: "Checking the convergence of the MCMC algorithm"
-#| fig-subcap: ["Trace plot", "Rhat plot"]
-#| layout-ncol: 2
-
-plot(first_model, "trace")
-
-plot(first_model, "rhat")
-```
-
-
+"Contains information licensed under the Open Government Licence – Toronto" (@tphlicense).
 
 \newpage
 
-
-# References
-
-
+# References {#sec-references}
