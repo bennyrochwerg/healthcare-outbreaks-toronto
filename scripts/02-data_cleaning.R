@@ -28,7 +28,7 @@ outbreak_cleaned_data <-
          `Type of Outbreak` = `Type of Outbreak`,
          `Outbreak First Known Cause` = `Causative Agent-1`) |>
   
-  # Renaming the Type of Location entries
+  # Renaming the Type of Location entries for clarity
   mutate(`Type of Location` =
            case_match(`Type of Location`,
                       "LTCH" ~ "Long-Term Care Home",

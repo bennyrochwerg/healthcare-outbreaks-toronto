@@ -241,6 +241,10 @@ Some of the R code used to create this work was adapted from @tellingstorieswith
 
 Sketches depicting both the desired dataset and the graphs generated in this analysis are available in the GitHub Repository.
 
+## Data Cleaning {#sec-appendix-cleaning}
+
+The data cleaning process involved filtering out some of the columns from the raw dataset and renaming some of the data entries for clarity and simplicity.
+
 ## Attribution Statement {#sec-appendix-attribution}
 
 "Contains information licensed under the Open Government Licence – Toronto" [@tphlicense].
