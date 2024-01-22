@@ -5,7 +5,7 @@ author:
 thanks: "A GitHub Repository containing all data, R code, and other files used in this investigation is located here: <https://github.com/bennyrochwerg/healthcare-outbreaks-toronto>"
 date: 01-23-2024
 date-format: long
-abstract: "In this report, Toronto Public Health data on 2023 outbreaks in healthcare facilities was analyzed. Long-term care homes comprised a majority of the outbreaks, approximately 95% of the outbreaks were respiratory, and almost two-thirds of the outbreaks had COVID-19 as their first known cause. This highlights the need for enhanced public health measures in healthcare facilities, particularly in long-term care homes. Future research should assess disease outbreaks in additional settings, such as workplaces and schools, to gain further insight into the extent of this issue."
+abstract: "In this report, 2023 Toronto Public Health data on outbreaks in healthcare facilities was analyzed. Long-term care homes comprised a majority of the outbreaks, approximately 95% of the outbreaks were respiratory, and almost two-thirds of the outbreaks had COVID-19 as their first known cause. This highlights the need for enhanced public health measures in healthcare facilities, particularly in long-term care homes. Future research should assess disease outbreaks in additional settings, such as workplaces and schools, to gain further insight into the extent of this issue."
 format: pdf
 number-sections: true
 # The toc parameter used to create a table of contents was obtained from
@@ -22,6 +22,20 @@ bibliography: references.bib
 ```{r}
 #| echo: false
 #| warning: false
+#### Preamble ####
+
+# Purpose: Generates a paper titled "Long-term care homes were hit hardest by
+# 2023 disease outbreaks in Toronto healthcare facilities" in PDF format when
+# rendered.
+# Author: Benny Rochwerg
+# Date: January 23, 2024
+# Contact: 4321benny@gmail.com
+# Pre-requisites: Run the files "01-download_data.R" and "02-data_cleaning.R".
+```
+
+```{r}
+#| echo: false
+#| warning: false
 #### Loading Packages ####
 
 # install.packages("tidyverse")
@@ -34,11 +48,11 @@ library(knitr)
 
 # Introduction {#sec-introduction}
 
-In March 2020, the World Health Organization proclaimed that the spread of COVID-19 constituted a pandemic [@whocovid]. Shortly thereafter, in May 2020, the COVID-19 mortality rate in Canadian long-term care homes reached approximately 35\% and represented 81\% of Canadian COVID-19 deaths [@cihi]. In general, the risk of disease circulation is greater in healthcare settings due to an increased presence of ill individuals and nearer physical contact between patients and staff [@cdc].
+In March 2020, the World Health Organization proclaimed that the spread of COVID-19 constituted a pandemic [@whocovid]. Shortly thereafter, in May 2020, the COVID-19 mortality rate in Canadian long-term care homes, where individuals live and receive healthcare on a continuous basis for reasons such as "advancing age, disability or declining health" [@ltchdefinition], reached approximately 35\% and represented 81\% of Canadian COVID-19 deaths [@cihi]. In general, the risk of disease circulation is greater in healthcare settings due to an increased presence of ill individuals and nearer physical contact between patients and staff [@cdc].
 
-Consequently, with the recent advent of large volumes of respiratory diseases such as influenza and COVID-19 in Toronto [@covidflu], assessing the prevalence of disease outbreaks in healthcare facilities in Toronto is of paramount importance. As a result, this investigation examines the number of outbreaks by location type (long-term care homes, retirement homes, hospitals, and transitional care facilities), outbreak type (respiratory and enteric/gastroenteric, the latter referring to intestinal and/or stomach illness [@enteric; @gastroenteric]), and first known cause (e.g., COVID-19, influenza A, etc.) to fill this knowledge gap.
+Consequently, with the recent advent of large volumes of respiratory diseases such as influenza and COVID-19 in Toronto [@covidflu], assessing the prevalence of disease outbreaks in healthcare facilities in Toronto is of paramount importance. According to @tphdataset, an outbreak is "a localized increase (e.g. in an institution, or a specific ward or floor within an institution) in the rate of infection or illness, above that which is expected". Thus, this investigation examines the number of outbreaks by location type (long-term care homes, retirement homes, hospitals, and transitional care facilities), outbreak type (respiratory and enteric/gastroenteric, the latter referring to intestinal and/or stomach illness [@enteric; @gastroenteric]), and first known cause (e.g., COVID-19, influenza A, etc.) to fill this knowledge gap.
 
-To do this, Toronto Public Health data on 2023 outbreaks in healthcare facilities was first obtained as described in @sec-data-overview. Based on this dataset, it was discovered that long-term care homes comprised a majority of the outbreaks, that approximately 95\% of the outbreaks were respiratory, and that almost two-thirds of the outbreaks had COVID-19 as their first known cause (@sec-data-results). As discussed in @sec-data-discussion, the high prevalence of outbreaks in long-term care homes has likely been exacerbated by the removal of a universal masking requirement, suggesting that the Government of Ontario should consider reinstating this policy to protect these vulnerable individuals. With respect to the structure of this paper, @sec-data includes an overview of the data, results, and discussion; @sec-acknowledgements acknowledges a valuable source of knowledge in creating this report; and @sec-appendix includes supplementary information.
+To do this, 2023 Toronto Public Health data on outbreaks in healthcare facilities was first obtained as described in @sec-data-overview. Based on this dataset, it was discovered that long-term care homes comprised a majority of the outbreaks, that approximately 95\% of the outbreaks were respiratory, and that almost two-thirds of the outbreaks had COVID-19 as their first known cause (@sec-data-results). As discussed in @sec-data-discussion, the high prevalence of outbreaks in long-term care homes has likely been exacerbated by the removal of a universal masking requirement, suggesting that the Government of Ontario should consider reinstating this policy to protect these vulnerable individuals. With respect to the structure of this paper, @sec-data includes an overview of the data, results, and discussion; @sec-acknowledgements acknowledges a valuable source of knowledge in creating this report; and @sec-appendix includes supplementary information.
 
 # Data {#sec-data}
 
@@ -65,6 +79,8 @@ outbreak_cleaned_data <- read_csv(here::here("outputs/data/cleaned_data.csv"))
 ```
 
 After loading the dataset using the R programming language [@citeR] and the `here` package [@citehere], the `tidyverse` [@citetidyverse] and `knitr` [@citeknitr] packages were used to generate tables and graphs. In doing so, R code was adapted from @tellingstorieswithdata.
+
+\newpage
 
 ```{r}
 #| echo: false
@@ -110,6 +126,8 @@ outbreak_cleaned_data |>
 
 @tbl-outbreaks-by-location-type and @fig-outbreaks-by-location-type illustrate that long-term care homes comprised a majority (approximately 56\%) of the total number of 2023 healthcare outbreaks in Toronto. This was followed by retirement homes (approximately 18\%), chronic care settings in hospitals (approximately 12\%), acute care settings in hospitals (approximately 10\%), psychiatric care settings in hospitals (approximately 2\%), and transitional care locations (approximately 1\%). Note that these percentages do not add up to 100\% as the proportions in @tbl-outbreaks-by-location-type were rounded to two decimal places.
 
+\newpage
+
 ```{r}
 #| echo: false
 #| warning: false
@@ -129,8 +147,6 @@ outbreak_cleaned_data |>
   arrange(desc(`Number of outbreaks`)) |>
   kable()
 ```
-
-\newpage
 
 ```{r}
 #| echo: false
@@ -199,7 +215,7 @@ outbreak_cleaned_data |>
   coord_flip()
 ```
 
-@tbl-outbreaks-by-first-known-cause and @fig-outbreaks-by-first-known-cause illustrate that the majority of 2023 Toronto healthcare outbreaks had COVID-19 as their first known cause (approximately 66\%). This was followed by rhinovirus (approximately 7\%), respiratory syncytial virus (approximately 5\%), parainfluenza (approximately 3\%), influenza A (approximately 3\%), seasonal coronavirus (approximately 3\%), metapneumovirus (approximately 2\%), norovirus (approximately 2\%), enterovirus/rhinovirus (approximately 1\%), enterovirus (approximately 1\%), CPE (less than 1\%), neonatal Group B streptococcal disease (less than 1\%), and streptococcus pyogenes (less than 1\%). Approximately 7\% of outbreaks had a pending or unknown first known cause. Note that these percentages do not add up to 100\% as the proportions in @tbl-outbreaks-by-first-known-cause were rounded to two decimal places.
+@tbl-outbreaks-by-first-known-cause and @fig-outbreaks-by-first-known-cause illustrate that the majority of 2023 Toronto healthcare outbreaks had COVID-19 as their first known cause (approximately 66\%). This was followed by rhinovirus (approximately 7\%), respiratory syncytial virus (approximately 5\%), parainfluenza (approximately 3\%), influenza A (approximately 3\%), seasonal coronavirus (approximately 3\%), metapneumovirus (approximately 2\%), norovirus (approximately 2\%), enterovirus/rhinovirus (approximately 1\%), enterovirus (approximately 1\%), CPE (less than 1\%), neonatal Group B streptococcal disease (less than 1\%), and streptococcus pyogenes (less than 1\%). Approximately 7\% of outbreaks had a pending or unknown first known cause.
 
 ## Discussion {#sec-data-discussion}
 
@@ -223,7 +239,7 @@ Some of the R code used to create this work was adapted from @tellingstorieswith
 
 ## Dataset and Graph Sketches {#sec-appendix-sketches}
 
-Sketches depicting both the desired dataset and the graphs to be generated in this analysis are available in the GitHub Repository.
+Sketches depicting both the desired dataset and the graphs generated in this analysis are available in the GitHub Repository.
 
 ## Attribution Statement {#sec-appendix-attribution}
 
