@@ -1,6 +1,6 @@
 ---
 title: "Long-term care homes were hit hardest by 2023 disease outbreaks in Toronto healthcare facilities"
-author: 
+author:
   - Benny Rochwerg
 thanks: "A GitHub Repository containing all data, R code, and other files used in this investigation is located here: <https://github.com/bennyrochwerg/healthcare-outbreaks-toronto>"
 date: 01-23-2024
