@@ -1,14 +1,21 @@
 ---
-title: "My title"
+title: "Long-term care homes were hit hardest by 2023 disease outbreaks in Toronto healthcare facilities"
 author: 
   - Benny Rochwerg
 thanks: "A GitHub Repository containing all data, R code, and other files used in this investigation is located here: <https://github.com/bennyrochwerg/healthcare-outbreaks-toronto>"
 date: 01-23-2024
 date-format: long
-abstract: "First sentence. Second sentence. Third sentence. Fourth sentence."
+abstract: "In this report, Toronto Public Health data on 2023 outbreaks in healthcare facilities was analyzed. Long-term care homes comprised a majority of the outbreaks, approximately 95% of the outbreaks were respiratory, and almost two-thirds of the outbreaks had COVID-19 as their first known cause. This highlights the need for enhanced public health measures in healthcare facilities, particularly in long-term care homes. Future research should assess disease outbreaks in additional settings, such as workplaces and schools, to gain further insight into the extent of this issue."
 format: pdf
 number-sections: true
+# The toc parameter used to create a table of contents was obtained from
+# Quarto documentation:
+# https://quarto.org/docs/reference/formats/pdf.html
 toc: true
+# The tbl-colwidths parameter used to adjust the table column widths was
+# obtained from Quarto documentation:
+# https://quarto.org/docs/authoring/tables.html
+tbl-colwidths: [50, 20, 20]
 bibliography: references.bib
 ---
 
@@ -27,7 +34,11 @@ library(knitr)
 
 # Introduction {#sec-introduction}
 
+In March 2020, the World Health Organization proclaimed that the spread of COVID-19 constituted a pandemic [@whocovid]. Shortly thereafter, in May 2020, the COVID-19 mortality rate in Canadian long-term care homes reached approximately 35\% and represented 81\% of Canadian COVID-19 deaths [@cihi]. In general, the risk of disease circulation is greater in healthcare settings due to an increased presence of ill individuals and nearer physical contact between patients and staff [@cdc].
 
+Consequently, with the recent advent of large volumes of respiratory diseases such as influenza and COVID-19 in Toronto [@covidflu], assessing the prevalence of disease outbreaks in healthcare facilities in Toronto is of paramount importance. As a result, this investigation examines the number of outbreaks by location type (long-term care homes, retirement homes, hospitals, and transitional care facilities), outbreak type (respiratory and enteric/gastroenteric, the latter referring to intestinal and/or stomach illness [@enteric; @gastroenteric]), and first known cause (e.g., COVID-19, influenza A, etc.) to fill this knowledge gap.
+
+To do this, Toronto Public Health data on 2023 outbreaks in healthcare facilities was first obtained as described in @sec-data-overview. Based on this dataset, it was discovered that long-term care homes comprised a majority of the outbreaks, that approximately 95\% of the outbreaks were respiratory, and that almost two-thirds of the outbreaks had COVID-19 as their first known cause (@sec-data-results). As discussed in @sec-data-discussion, the high prevalence of outbreaks in long-term care homes has likely been exacerbated by the removal of a universal masking requirement, suggesting that the Government of Ontario should consider reinstating this policy to protect these vulnerable individuals. With respect to the structure of this paper, @sec-data includes an overview of the data, results, and discussion; @sec-acknowledgements acknowledges a valuable source of knowledge in creating this report; and @sec-appendix includes supplementary information.
 
 # Data {#sec-data}
 
@@ -60,7 +71,6 @@ After loading the dataset using the R programming language [@citeR] and the `her
 #| warning: false
 #| label: tbl-outbreaks-by-location-type
 #| tbl-cap: "Outbreaks by type of healthcare location in Toronto in 2023"
-#| tbl-colwidths: [50, 20, 20]
 
 #### First Table ####
 
@@ -98,14 +108,13 @@ outbreak_cleaned_data |>
   coord_flip()
 ```
 
-@tbl-outbreaks-by-location-type and @fig-outbreaks-by-location-type illustrate that long-term care homes comprise a majority (approximately 56\%) of the total number of healthcare outbreaks in Toronto. This is followed by retirement homes (approximately 18\%), chronic care settings in hospitals (approximately 12\%), acute care settings in hospitals (approximately 10\%), psychiatric care settings in hospitals (approximately 2\%), and transitional care locations (approximately 1\%). Note that these percentages do not add up to 100\% as the proportions in @tbl-outbreaks-by-location-type were rounded to two decimal places.
+@tbl-outbreaks-by-location-type and @fig-outbreaks-by-location-type illustrate that long-term care homes comprised a majority (approximately 56\%) of the total number of 2023 healthcare outbreaks in Toronto. This was followed by retirement homes (approximately 18\%), chronic care settings in hospitals (approximately 12\%), acute care settings in hospitals (approximately 10\%), psychiatric care settings in hospitals (approximately 2\%), and transitional care locations (approximately 1\%). Note that these percentages do not add up to 100\% as the proportions in @tbl-outbreaks-by-location-type were rounded to two decimal places.
 
 ```{r}
 #| echo: false
 #| warning: false
 #| label: tbl-outbreaks-by-outbreak-type
 #| tbl-cap: "Outbreaks by type of outbreak for Toronto healthcare locations in 2023"
-#| tbl-colwidths: [50, 20, 20]
 
 #### Second Table ####
 
@@ -120,6 +129,8 @@ outbreak_cleaned_data |>
   arrange(desc(`Number of outbreaks`)) |>
   kable()
 ```
+
+\newpage
 
 ```{r}
 #| echo: false
@@ -142,14 +153,15 @@ outbreak_cleaned_data |>
   labs(x = "Type of outbreak", y = "Number of outbreaks")
 ```
 
-@tbl-outbreaks-by-outbreak-type and @fig-outbreaks-by-outbreak-type show that the vast majority of healthcare outbreaks in Toronto are respiratory in nature (approximately 95\%). This is followed by enteric outbreaks (approximately 4\%) and other types of outbreaks (less than 1\%). Note that these percentages do not add up to 100\% as the proportions in @tbl-outbreaks-by-outbreak-type were rounded to two decimal places.
+@tbl-outbreaks-by-outbreak-type and @fig-outbreaks-by-outbreak-type show that the vast majority of 2023 healthcare outbreaks in Toronto were respiratory in nature (approximately 95\%). This was followed by enteric outbreaks (approximately 4\%) and other types of outbreaks (less than 1\%). Note that these percentages do not add up to 100\% as the proportions in @tbl-outbreaks-by-outbreak-type were rounded to two decimal places.
+
+\newpage
 
 ```{r}
 #| echo: false
 #| warning: false
 #| label: tbl-outbreaks-by-first-known-cause
 #| tbl-cap: "Outbreaks by first known cause for Toronto healthcare locations in 2023"
-#| tbl-colwidths: [50, 20, 20]
 
 #### Third Table ####
 
@@ -187,35 +199,21 @@ outbreak_cleaned_data |>
   coord_flip()
 ```
 
-@tbl-outbreaks-by-first-known-cause and @fig-outbreaks-by-first-known-cause illustrate that the majority of Toronto healthcare outbreaks have COVID-19 as their first known cause (approximately 66\%). This is followed by rhinovirus (approximately 7\%), respiratory syncytial virus (approximately 5\%), parainfluenza (approximately 3\%), influenza A (approximately 3\%), seasonal coronavirus (approximately 3\%), metapneumovirus (approximately 2\%), norovirus (approximately 2\%), enterovirus/rhinovirus (approximately 1\%), enterovirus (approximately 1\%), CPE (less than 1\%), neonatal Group B streptococcal disease (less than 1\%), and streptococcus pyogenes (less than 1\%). Approximately 7\% of outbreaks had a pending or unknown first known cause. Note that these percentages do not add up to 100\% as the proportions in @tbl-outbreaks-by-first-known-cause were rounded to two decimal places.
+@tbl-outbreaks-by-first-known-cause and @fig-outbreaks-by-first-known-cause illustrate that the majority of 2023 Toronto healthcare outbreaks had COVID-19 as their first known cause (approximately 66\%). This was followed by rhinovirus (approximately 7\%), respiratory syncytial virus (approximately 5\%), parainfluenza (approximately 3\%), influenza A (approximately 3\%), seasonal coronavirus (approximately 3\%), metapneumovirus (approximately 2\%), norovirus (approximately 2\%), enterovirus/rhinovirus (approximately 1\%), enterovirus (approximately 1\%), CPE (less than 1\%), neonatal Group B streptococcal disease (less than 1\%), and streptococcus pyogenes (less than 1\%). Approximately 7\% of outbreaks had a pending or unknown first known cause. Note that these percentages do not add up to 100\% as the proportions in @tbl-outbreaks-by-first-known-cause were rounded to two decimal places.
 
-# Acknowledgements {#sec-acknowledgements}
+## Discussion {#sec-data-discussion}
 
-Some of the R code used to create this work was adapted from @tellingstorieswithdata.
-
-
-# Introduction
-
-You can and should cross-reference sections and sub-sections. 
-
-The remainder of this paper is structured as follows. @sec-data....
-
-
-
-
-
-
-
-
-## Discussion {#data-discussion}
-
-In @sec-data-results, it was observed that long-term care homes had the greatest proportion of total outbreaks among healthcare facilities in Toronto in 2023 (@tbl-outbreaks-by-location-type and @fig-outbreaks-by-location-type), that approximately 95\% of outbreaks were respiratory in nature (@tbl-outbreaks-by-outbreak-type and @fig-outbreaks-by-outbreak-type), and that COVID-19 was the first known cause of a majority of outbreaks (@tbl-outbreaks-by-first-known-cause and @fig-outbreaks-by-first-known-cause).
+In @sec-data-results, it was observed that long-term care homes had the greatest proportion of the total outbreaks among healthcare facilities in Toronto in 2023 (@tbl-outbreaks-by-location-type and @fig-outbreaks-by-location-type), that approximately 95\% of the outbreaks were respiratory in nature (@tbl-outbreaks-by-outbreak-type and @fig-outbreaks-by-outbreak-type), and that COVID-19 was the first known cause of a majority of the outbreaks (@tbl-outbreaks-by-first-known-cause and @fig-outbreaks-by-first-known-cause).
 
 All three of these results share common origins. For instance, in October 2022, the Government of Ontario removed a masking requirement for caregivers and visitors in long-term care homes [@cbcltch], whose residents are primarily at or above 65 years of age as reported in 2018 [@clri]. Since individuals aged 60 years or older are more likely to experience worse health effects after contracting COVID-19, the Public Health Agency of Canada recommends that they wear a respirator or mask to limit the transmission of this pathogen [@phaccovid]. As a result, it seems that the Government of Ontario did not heed this advice, possibly contributing to the large proportion of disease outbreaks (which include COVID-19) in Toronto long-term care homes in 2023. This appears to follow a long-standing trend in Ontario long-term care homes. For example, at the start of the COVID-19 pandemic, long-term care homes in Ontario experienced a sizable increase in COVID-19 cases [@cbcinquiry]. This was potentially made worse by the fact that not all of these facilities enforced mask-wearing and that long-term care homes were passed over for personal protective equipment in favour of hospitals [@cbcinquiry]. Moreover, the fact that several hospitals in Toronto curtailed their mask requirements in June and July of 2023 [@hospitalmasks] likely contributed to the large volume of respiratory disease outbreaks observed in @tbl-outbreaks-by-outbreak-type and @fig-outbreaks-by-outbreak-type.
 
 Although over 1,000 data points pertaining to healthcare outbreaks in Toronto in 2023 were examined in this analysis, several limitations were present. For instance, asymptomatic disease outbreaks were likely not included in the studied dataset as they may not have been noticeable enough to be reported, contributing to an underestimate of the total number of outbreaks. In addition, only the first known cause of each outbreak was examined for clarity purposes. This also likely led to an underestimate of the number of outbreaks associated with each disease.
 
-Future research should be conducted to assess the state of disease outbreaks in long-term care homes in particular, both in Toronto and across Canada, in order to gain deeper insight into this critical issue. The prevalence of disease outbreaks in other settings, such as schools and workplaces, should also be investigated to expand on this analysis.
+Future research should be conducted to assess the state of disease outbreaks in long-term care homes in particular, both in Toronto and across Canada, in order to gain deeper insight into this critical issue. The prevalence of disease outbreaks in additional settings, such as schools and workplaces, should also be investigated to expand on this analysis.
+
+# Acknowledgements {#sec-acknowledgements}
+
+Some of the R code used to create this work was adapted from @tellingstorieswithdata.
 
 \newpage
 
