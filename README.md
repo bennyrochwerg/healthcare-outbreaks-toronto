@@ -1,4 +1,4 @@
-# healthcare-outbreaks-toronto
+# Long-term care homes were hit hardest by 2023 disease outbreaks in Toronto healthcare facilities
 
 # Description
 
