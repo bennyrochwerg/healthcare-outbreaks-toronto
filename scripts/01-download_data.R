@@ -9,6 +9,8 @@
 
 #### Loading Packages ####
 
+# install.packages("opendatatoronto")
+# install.packages("tidyverse")
 library(opendatatoronto)
 library(tidyverse)
 

@@ -12,10 +12,6 @@ number-sections: true
 # Quarto documentation:
 # https://quarto.org/docs/reference/formats/pdf.html
 toc: true
-# The tbl-colwidths parameter used to adjust the table column widths was
-# obtained from Quarto documentation:
-# https://quarto.org/docs/authoring/tables.html
-tbl-colwidths: [50, 20, 20]
 bibliography: references.bib
 ---
 
@@ -40,10 +36,8 @@ bibliography: references.bib
 
 # install.packages("tidyverse")
 # install.packages("here")
-# install.packages("knitr")
 library(tidyverse)
 library(here)
-library(knitr)
 ```
 
 # Introduction {#sec-introduction}
@@ -52,7 +46,7 @@ In March 2020, the World Health Organization proclaimed that the spread of COVID
 
 Consequently, with the recent advent of large volumes of respiratory diseases such as influenza and COVID-19 in Toronto [@covidflu], assessing the prevalence of disease outbreaks in healthcare facilities in Toronto is of paramount importance. According to @tphdataset, an outbreak is "a localized increase (e.g. in an institution, or a specific ward or floor within an institution) in the rate of infection or illness, above that which is expected". Thus, this investigation examines the number of outbreaks by location type (long-term care homes, retirement homes, hospitals, and transitional care facilities), outbreak type (respiratory and enteric/gastroenteric, the latter referring to intestinal and/or stomach illness [@enteric; @gastroenteric]), and first known cause (e.g., COVID-19, influenza A, etc.) to fill this knowledge gap.
 
-To do this, 2023 Toronto Public Health data on outbreaks in healthcare facilities was first obtained as described in @sec-data-overview. Based on this dataset, it was discovered that long-term care homes comprised a majority of the outbreaks, that approximately 95\% of the outbreaks were respiratory, and that almost two-thirds of the outbreaks had COVID-19 as their first known cause (@sec-data-results). As discussed in @sec-data-discussion, the high prevalence of outbreaks in long-term care homes has likely been exacerbated by the removal of a universal masking requirement, suggesting that the Government of Ontario should consider reinstating this policy to protect these vulnerable individuals. With respect to the structure of this paper, @sec-data includes an overview of the data, results, and discussion; @sec-acknowledgements acknowledges a valuable source of knowledge in creating this report; and @sec-appendix includes supplementary information.
+To do this, 2023 Toronto Public Health data on outbreaks in healthcare facilities was first obtained as described in @sec-data-overview. Based on this dataset, it was discovered that long-term care homes comprised a majority of the outbreaks, that approximately 95\% of the outbreaks were respiratory, and that almost two-thirds of the outbreaks had COVID-19 as their first known cause (@sec-data-results). As discussed in @sec-discussion, the high prevalence of outbreaks in long-term care homes has likely been exacerbated by the removal of a universal masking requirement, suggesting that the Government of Ontario should consider reinstating this policy to protect these vulnerable individuals. With respect to the structure of this paper, @sec-data includes an overview of the data and the results; @sec-discussion includes a discussion of the results; and @sec-appendix includes supplementary information.
 
 # Data {#sec-data}
 
@@ -78,28 +72,34 @@ Using the R programming language [@citeR], the `janitor` [@citejanitor] and `tid
 outbreak_cleaned_data <- read_csv(here::here("outputs/data/cleaned_data.csv"))
 ```
 
-After loading the dataset using the R programming language [@citeR] and the `here` package [@citehere], the `tidyverse` [@citetidyverse] and `knitr` [@citeknitr] packages were used to generate tables and graphs. In doing so, R code was adapted from @tellingstorieswithdata.
+After loading the dataset using the R programming language [@citeR] and the `here` package [@citehere], the `tidyverse` [@citetidyverse] package was used to generate graphs. In doing so, R code was adapted from @tellingstorieswithdata.
 
 \newpage
 
 ```{r}
 #| echo: false
 #| warning: false
-#| label: tbl-outbreaks-by-location-type
-#| tbl-cap: "Outbreaks by type of healthcare location in Toronto in 2023"
 
-#### First Table ####
+#### First Graph Labels ####
 
 # This code is based on knowledge from Alexander (2023).
 
-outbreak_cleaned_data |>
+# Preparing the necessary data to create the labels
+location_data <- outbreak_cleaned_data |>
   count(`Type of Location`) |>
   rename(`Type of location` = `Type of Location`,
          `Number of outbreaks` = n) |>
-  mutate(`Proportion of total outbreaks` =
-           round(`Number of outbreaks` / nrow(outbreak_cleaned_data), 2)) |>
-  arrange(desc(`Number of outbreaks`)) |>
-  kable()
+  mutate(`Percentage of total outbreaks` =
+           round(100 * `Number of outbreaks` / nrow(outbreak_cleaned_data), 0)) |>
+  arrange(desc(`Number of outbreaks`))
+
+# Generating the labels using the paste function from the Help pane in RStudio
+location_data_labels <- paste(
+    location_data$`Number of outbreaks`, " (", location_data$`Percentage of total outbreaks`, "%)", sep = "")
+
+# Adding the labels to the location data table
+location_data <- location_data |>
+  mutate(`Label` = location_data_labels)
 ```
 
 ```{r}
@@ -117,35 +117,48 @@ outbreak_cleaned_data |>
   # The reorder function used for sorting the columns in descending order was obtained
   # from Stack Overflow:
   # https://stackoverflow.com/questions/25664007/reorder-bars-in-geom-bar-ggplot2-by-value
-  ggplot(mapping = aes(x = reorder(`Type of Location`, n), y = n)) +
+  ggplot(mapping = aes(x = reorder(location_data$`Type of location`, location_data$`Number of outbreaks`), y = location_data$`Number of outbreaks`)) +
   geom_col() +
-  theme_bw() +
+  theme_classic() +
   labs(x = "Type of location", y = "Number of outbreaks") +
-  coord_flip()
+  coord_flip() +
+  # The geom_text function used to add the labels to the graph was obtained from
+  # R Graphics Cookbook:
+  # https://r-graphics.org/recipe-bar-graph-labels
+  # The hjust argument used to align the labels was obtained from
+  # Cédric Scherer's website:
+  # https://www.cedricscherer.com/2021/07/05/a-quick-how-to-on-labelling-bar-graphs-in-ggplot2/
+  geom_text(aes(label = location_data$`Label`), hjust = c(1, 0, 0, 0, 0, 0), colour = "magenta")
 ```
 
-@tbl-outbreaks-by-location-type and @fig-outbreaks-by-location-type illustrate that long-term care homes comprised a majority (approximately 56\%) of the total number of 2023 healthcare outbreaks in Toronto. This was followed by retirement homes (approximately 18\%), chronic care settings in hospitals (approximately 12\%), acute care settings in hospitals (approximately 10\%), psychiatric care settings in hospitals (approximately 2\%), and transitional care locations (approximately 1\%). Note that these percentages do not add up to 100\% as the proportions in @tbl-outbreaks-by-location-type were rounded to two decimal places.
+@fig-outbreaks-by-location-type illustrates that long-term care homes comprised a majority (approximately 56\%) of the total number of 2023 healthcare outbreaks in Toronto. This was followed by retirement homes (approximately 18\%), chronic care settings in hospitals (approximately 12\%), acute care settings in hospitals (approximately 10\%), psychiatric care settings in hospitals (approximately 2\%), and transitional care locations (approximately 1\%). Note that these percentages do not add up to 100\% as they were rounded to the nearest integer.
 
 \newpage
 
 ```{r}
 #| echo: false
 #| warning: false
-#| label: tbl-outbreaks-by-outbreak-type
-#| tbl-cap: "Outbreaks by type of outbreak for Toronto healthcare locations in 2023"
 
-#### Second Table ####
+#### Second Graph Labels ####
 
 # This code is based on knowledge from Alexander (2023).
 
-outbreak_cleaned_data |>
+# Preparing the necessary data to create the labels
+outbreak_data <- outbreak_cleaned_data |>
   count(`Type of Outbreak`) |>
   rename(`Type of outbreak` = `Type of Outbreak`,
          `Number of outbreaks` = n) |>
-  mutate(`Proportion of total outbreaks` =
-           round(`Number of outbreaks` / nrow(outbreak_cleaned_data), 2)) |>
-  arrange(desc(`Number of outbreaks`)) |>
-  kable()
+  mutate(`Percentage of total outbreaks` =
+           round(100 * `Number of outbreaks` / nrow(outbreak_cleaned_data), 0)) |>
+  arrange(desc(`Number of outbreaks`))
+
+# Generating the labels using the paste function from the Help pane in RStudio
+outbreak_data_labels <- paste(
+    outbreak_data$`Number of outbreaks`, " (", outbreak_data$`Percentage of total outbreaks`, "%)", sep = "")
+
+# Adding the labels to the outbreak data table
+outbreak_data <- outbreak_data |>
+  mutate(`Label` = outbreak_data_labels)
 ```
 
 ```{r}
@@ -163,34 +176,44 @@ outbreak_cleaned_data |>
   # The reorder function used for sorting the columns in descending order was obtained
   # from Stack Overflow:
   # https://stackoverflow.com/questions/25664007/reorder-bars-in-geom-bar-ggplot2-by-value
-  ggplot(mapping = aes(x = reorder(`Type of Outbreak`, -n), y = n)) +
+  ggplot(mapping = aes(x = reorder(outbreak_data$`Type of outbreak`, -outbreak_data$`Number of outbreaks`), y = outbreak_data$`Number of outbreaks`)) +
   geom_col() +
-  theme_bw() +
-  labs(x = "Type of outbreak", y = "Number of outbreaks")
+  theme_classic() +
+  labs(x = "Type of outbreak", y = "Number of outbreaks") +
+  # The geom_text function and vjust argument used to add the labels to the
+  # graph were obtained from R Graphics Cookbook:
+  # https://r-graphics.org/recipe-bar-graph-labels
+  geom_text(aes(label = outbreak_data$`Label`), vjust = -0.15, colour = "magenta")
 ```
 
-@tbl-outbreaks-by-outbreak-type and @fig-outbreaks-by-outbreak-type show that the vast majority of 2023 healthcare outbreaks in Toronto were respiratory in nature (approximately 95\%). This was followed by enteric outbreaks (approximately 4\%) and other types of outbreaks (less than 1\%). Note that these percentages do not add up to 100\% as the proportions in @tbl-outbreaks-by-outbreak-type were rounded to two decimal places.
+@fig-outbreaks-by-outbreak-type shows that the vast majority of 2023 healthcare outbreaks in Toronto were respiratory in nature (approximately 95\%). This was followed by enteric outbreaks (approximately 4\%) and other types of outbreaks (less than 1\%). Note that these percentages do not add up to 100\% as they were rounded to the nearest integer.
 
 \newpage
 
 ```{r}
 #| echo: false
 #| warning: false
-#| label: tbl-outbreaks-by-first-known-cause
-#| tbl-cap: "Outbreaks by first known cause for Toronto healthcare locations in 2023"
 
-#### Third Table ####
+#### Third Graph Labels ####
 
 # This code is based on knowledge from Alexander (2023).
 
-outbreak_cleaned_data |>
+# Preparing the necessary data to create the labels
+first_known_cause_data <- outbreak_cleaned_data |>
   count(`Outbreak First Known Cause`) |>
   rename(`Outbreak first known cause` = `Outbreak First Known Cause`,
          `Number of outbreaks` = n) |>
-  mutate(`Proportion of total outbreaks` =
-           round(`Number of outbreaks` / nrow(outbreak_cleaned_data), 2)) |>
-  arrange(desc(`Number of outbreaks`)) |>
-  kable()
+  mutate(`Percentage of total outbreaks` =
+           round(100 * `Number of outbreaks` / nrow(outbreak_cleaned_data), 0)) |>
+  arrange(desc(`Number of outbreaks`))
+
+# Generating the labels using the paste function from the Help pane in RStudio
+first_known_cause_data_labels <- paste(" ",
+    first_known_cause_data$`Number of outbreaks`, " (", first_known_cause_data$`Percentage of total outbreaks`, "%)", sep = "")
+
+# Adding the labels to the first known cause data table
+first_known_cause_data <- first_known_cause_data |>
+  mutate(`Label` = first_known_cause_data_labels)
 ```
 
 ```{r}
@@ -208,28 +231,31 @@ outbreak_cleaned_data |>
   # The reorder function used for sorting the columns in descending order was obtained
   # from Stack Overflow:
   # https://stackoverflow.com/questions/25664007/reorder-bars-in-geom-bar-ggplot2-by-value
-  ggplot(mapping = aes(x = reorder(`Outbreak First Known Cause`, n), y = n)) +
+  ggplot(mapping = aes(x = reorder(first_known_cause_data$`Outbreak first known cause`, first_known_cause_data$`Number of outbreaks`), y = first_known_cause_data$`Number of outbreaks`)) +
   geom_col() +
-  theme_bw() +
+  theme_classic() +
   labs(x = "Outbreak first known cause", y = "Number of outbreaks") +
-  coord_flip()
+  coord_flip() +
+  # The geom_text function used to add the labels to the graph was obtained from
+  # R Graphics Cookbook:
+  # https://r-graphics.org/recipe-bar-graph-labels
+  # The hjust argument used to align the labels was obtained from
+  # Cédric Scherer's website:
+  # https://www.cedricscherer.com/2021/07/05/a-quick-how-to-on-labelling-bar-graphs-in-ggplot2/
+  geom_text(aes(label = first_known_cause_data$`Label`), hjust = c(1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), colour = "magenta", size = 3)
 ```
 
-@tbl-outbreaks-by-first-known-cause and @fig-outbreaks-by-first-known-cause illustrate that the majority of 2023 Toronto healthcare outbreaks had COVID-19 as their first known cause (approximately 66\%). This was followed by rhinovirus (approximately 7\%), respiratory syncytial virus (approximately 5\%), parainfluenza (approximately 3\%), influenza A (approximately 3\%), seasonal coronavirus (approximately 3\%), metapneumovirus (approximately 2\%), norovirus (approximately 2\%), enterovirus/rhinovirus (approximately 1\%), enterovirus (approximately 1\%), CPE (less than 1\%), neonatal Group B streptococcal disease (less than 1\%), and streptococcus pyogenes (less than 1\%). Approximately 7\% of outbreaks had a pending or unknown first known cause.
+@fig-outbreaks-by-first-known-cause illustrates that the majority of 2023 Toronto healthcare outbreaks had COVID-19 as their first known cause (approximately 66\%). This was followed by rhinovirus (approximately 7\%), respiratory syncytial virus (approximately 5\%), parainfluenza (approximately 3\%), influenza A (approximately 3\%), seasonal coronavirus (approximately 3\%), metapneumovirus (approximately 2\%), norovirus (approximately 2\%), enterovirus/rhinovirus (approximately 1\%), enterovirus (approximately 1\%), CPE (less than 1\%), streptococcus pyogenes (less than 1\%), and neonatal Group B streptococcal disease (less than 1\%). Approximately 7\% of outbreaks had a pending or unknown first known cause.
 
-## Discussion {#sec-data-discussion}
+# Discussion {#sec-discussion}
 
-In @sec-data-results, it was observed that long-term care homes had the greatest proportion of the total outbreaks among healthcare facilities in Toronto in 2023 (@tbl-outbreaks-by-location-type and @fig-outbreaks-by-location-type), that approximately 95\% of the outbreaks were respiratory in nature (@tbl-outbreaks-by-outbreak-type and @fig-outbreaks-by-outbreak-type), and that COVID-19 was the first known cause of a majority of the outbreaks (@tbl-outbreaks-by-first-known-cause and @fig-outbreaks-by-first-known-cause).
+In @sec-data-results, it was observed that long-term care homes had the greatest proportion of the total outbreaks among healthcare facilities in Toronto in 2023 (@fig-outbreaks-by-location-type), that approximately 95\% of the outbreaks were respiratory in nature (@fig-outbreaks-by-outbreak-type), and that COVID-19 was the first known cause of a majority of the outbreaks (@fig-outbreaks-by-first-known-cause).
 
-All three of these results share common origins. For instance, in October 2022, the Government of Ontario removed a masking requirement for caregivers and visitors in long-term care homes [@cbcltch], whose residents are primarily at or above 65 years of age with an average age of 83 years as reported in 2018 [@clri]. Since individuals aged 60 years or older are more likely to experience worse health effects after contracting COVID-19, the Public Health Agency of Canada recommends that they wear a respirator or mask to limit the transmission of this pathogen [@phaccovid]. As a result, it seems that the Government of Ontario did not heed this advice, possibly contributing to the large proportion of disease outbreaks (which include COVID-19) in Toronto long-term care homes in 2023. This appears to follow a long-standing trend in Ontario long-term care homes. For example, at the start of the COVID-19 pandemic, long-term care homes in Ontario experienced a sizable increase in COVID-19 cases [@cbcinquiry]. This was potentially made worse by the fact that not all of these facilities enforced mask-wearing and that long-term care homes were passed over for personal protective equipment in favour of hospitals [@cbcinquiry]. Moreover, the fact that several hospitals in Toronto curtailed their mask requirements in June and July of 2023 [@hospitalmasks] likely contributed to the large volume of respiratory disease outbreaks observed in @tbl-outbreaks-by-outbreak-type and @fig-outbreaks-by-outbreak-type.
+All three of these results share common origins. For instance, in October 2022, the Government of Ontario removed a masking requirement for caregivers and visitors in long-term care homes [@cbcltch], whose residents are primarily at or above 65 years of age with an average age of 83 years as reported in 2018 [@clri]. Since individuals aged 60 years or older are more likely to experience worse health effects after contracting COVID-19, the Public Health Agency of Canada recommends that they wear a respirator or mask to limit the transmission of this pathogen [@phaccovid]. As a result, it seems that the Government of Ontario did not heed this advice, possibly contributing to the large proportion of disease outbreaks (which include COVID-19) in Toronto long-term care homes in 2023. This appears to follow a long-standing trend in Ontario long-term care homes. For example, at the start of the COVID-19 pandemic, long-term care homes in Ontario experienced a sizable increase in COVID-19 cases [@cbcinquiry]. This was potentially made worse by the fact that not all of these facilities enforced mask-wearing and that long-term care homes were passed over for personal protective equipment in favour of hospitals [@cbcinquiry]. Moreover, the fact that several hospitals in Toronto curtailed their mask requirements in June and July of 2023 [@hospitalmasks] likely contributed to the large volume of respiratory disease outbreaks observed in @fig-outbreaks-by-outbreak-type.
 
 Although over 1,000 data points pertaining to healthcare outbreaks in Toronto in 2023 were examined in this analysis, several limitations were present. For instance, asymptomatic disease outbreaks were likely not included in the studied dataset as they may not have been noticeable enough to be reported, contributing to an underestimate of the total number of outbreaks. In addition, only the first known cause of each outbreak was examined for clarity purposes. This also likely led to an underestimate of the number of outbreaks associated with each disease.
 
 Future research should be conducted to assess the state of disease outbreaks in long-term care homes in particular, both in Toronto and across Canada, in order to gain deeper insight into this critical issue. The prevalence of disease outbreaks in additional settings, such as schools and workplaces, should also be investigated to expand on this analysis.
-
-# Acknowledgements {#sec-acknowledgements}
-
-Some of the R code used to create this work was adapted from @tellingstorieswithdata.
 
 \newpage
 

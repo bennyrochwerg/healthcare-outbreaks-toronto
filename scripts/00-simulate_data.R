@@ -10,6 +10,8 @@
 
 #### Loading Packages ####
 
+# install.packages("janitor")
+# install.packages("tidyverse")
 library(janitor)
 library(tidyverse)
 
