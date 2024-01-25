@@ -4,6 +4,8 @@
 
 This GitHub Repository contains all files used to generate the paper *Long-term care homes were hit hardest by 2023 disease outbreaks in Toronto healthcare facilities*.
 
+Some of the R code used to create this work was adapted from Alexander (2023).
+
 # File Structure
 
 The structure of this Repository is as follows:
